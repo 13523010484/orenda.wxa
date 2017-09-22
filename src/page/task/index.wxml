@@ -1,6 +1,58 @@
 <!--任务-->
 <view class="container">
-    <view class="page-body">
-        <text>任务</text>
-    </view>
+        <view class="page-body">
+                <!-- tab切换 -->
+                <view class='todo-tabs'>
+                        <view class='tab active'>我负责的</view>
+                        <view class='tab'>我发起的</view>
+                </view>
+
+                <!--未完成列表  -->
+                <view class='completed-todos'>
+                        <view bindtap='jumpDetail' id='btn-show-completed-todos'>
+                                <text class='content'>未完成</text>
+                                <text class='icon'>>></text>
+                        </view>
+
+                        <view class='todolist'>
+                                <view class='todos-container'>
+                                        <view bindtap='jumpDetail'>
+                                                <view class='item-name'>
+                                                        <text class='todo-rest'>活动报名项目</text>
+                                                </view>
+                                                <view class='item-content'>贾秋花
+                                                        <text style='color:red;'>17/09/22</text> 未完成
+                                                        <text>详情</text>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                          <view class='todolist'>
+                                <view class='todos-container'>
+                                        <view bindtap='jumpDetail'>
+                                                <view class='item-name'>
+                                                        <text class='todo-rest'>活动报名项目</text>
+                                                </view>
+                                                <view class='item-content'>贾秋花
+                                                        <text style='color:red;'>17/09/22</text> 未完成
+                                                        <text>详情</text>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                          <view class='todolist'>
+                                <view class='todos-container'>
+                                        <view bindtap='jumpDetail'>
+                                                <view class='item-name'>
+                                                        <text class='todo-rest'>活动报名项目</text>
+                                                </view>
+                                                <view class='item-content'>贾秋花
+                                                        <text style='color:red;'>17/09/22</text> 未完成
+                                                        <text>详情</text>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </view>
 </view>

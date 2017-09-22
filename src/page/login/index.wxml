@@ -11,7 +11,7 @@
                     <view class='box'>
                         <view class='form-item'>
                             <view class='form-field'>
-                                <input class='username' type='email' name='email' placeholder='用户名' />
+                                <input class='username' type='text' name='text' placeholder='用户名' />
                             </view>
                         </view>
                         <view class='form-item'>

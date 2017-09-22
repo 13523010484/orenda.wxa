@@ -1,0 +1,66 @@
+/* 任务样式  */
+.container{
+  padding-top: 20rpx;
+}
+.todo-tabs {
+   margin: 0 30rpx;
+    margin-bottom: 20rpx;
+    height: 60rpx;
+    border: 2rpx solid #5bc4c7;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.todo-tabs .tab.active {
+    background-color: #5bc4c7;
+    color: #fff;
+    pointer-events: none;
+}
+.todo-tabs .tab {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    line-height: 56rpx;
+    text-align: center;
+    color: #5bc4c7;
+}
+.completed-todos {
+        margin: 10px 0;
+        font-size: 14px;
+        background-color: #fff;
+        margin-bottom: -1px;
+}
+#btn-show-completed-todos{
+        position: relative;
+        display: inline-flex;
+        width: calc(100% - 30px);
+        justify-content: space-between;
+         padding: 0 30rpx; 
+         align-items: center;
+        line-height: 88rpx; 
+        color: #222;
+        border-top: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+}
+.todolist {
+    margin-bottom: 10px;
+    background-color: #fff;
+     border-top: 1px solid #e8e8e8; 
+}
+.completed-todos .todolist {
+        display: inline-flex;
+        justify-content: space-between;
+        width: calc(100% - 30px);
+        padding: 0 30rpx;
+        line-height: 44rpx;
+        border-top: none;
+}
+.truncate-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

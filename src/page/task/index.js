@@ -12,14 +12,16 @@ Page({
      */
     onLoad: function (options) {
 
-        wx.navigateTo({
-            url: '/page/login/index',
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-        })
-
+        // wx.navigateTo({
+        //     url: '/page/login/index',
+        //     success: function (res) { },
+        //     fail: function (res) { },
+        //     complete: function (res) { },
+        // })
 
     },
+    jumpDetail:function(){
+            url:'';
+    }
 
 })
