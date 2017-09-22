@@ -1,33 +1,31 @@
-
- <view class="container">
+<view class="container">
     <view class="page-body">
         <view class='layout-center'>
-    <view class='head'>
-        <view class='logo'>Orenda</view>
-        <view class='title'>登录</view>
-    </view>
-
-    <view class='body'>
-        <form class='form' action='' method=''>
-            <input type='hidden' name='remember_me' value='' />
-            <view class='box'>
-                <view class='form-item'>
-                    <view class='form-field'>
-                        <input class='username' type='email' name='email' placeholder='用户名'/>
-                    </view>
-                </view>
-                <view class='form-item'>
-                    <view class='form-field'>
-                        <input type='password' name='password' placeholder='密码'/>
-                    </view>
-                </view>
+            <view class='head'>
+                <view class='logo'>Orenda</view>
+                <view class='title'>登录</view>
             </view>
 
-            <view class='form-buttons'>
-                <button type='submit' class='btn'>登录</button>
+            <view class='body'>
+                <form class='form' action='' method=''>
+                    <view class='box'>
+                        <view class='form-item'>
+                            <view class='form-field'>
+                                <input class='username' type='email' name='email' placeholder='用户名' />
+                            </view>
+                        </view>
+                        <view class='form-item'>
+                            <view class='form-field'>
+                                <input class='password' type='password' name='password' placeholder='密码' />
+                            </view>
+                        </view>
+                    </view>
+
+                    <view class='form-buttons'>
+                        <button type='primary' class='btn'>登录</button>
+                    </view>
+                </form>
             </view>
-        </form>
+        </view>
     </view>
 </view>
-    </view>
-</view> 

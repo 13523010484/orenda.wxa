@@ -1,13 +1,14 @@
-@import "../common/lib/common.wxss";
 .layout-center {
     text-align: center;
 }
+
 .layout-center .head {
     padding-top: 60rpx;
     height: 440rpx;
     background-color: #5bc4c7;
 }
-.layout-center .head .logo,.layout-center .head .title {
+
+.layout-center .head .logo, .layout-center .head .title {
     margin-top: 30rpx;
     font-size: 52rpx;
     font-weight: 300;
@@ -15,69 +16,67 @@
     text-align: center;
     color: #fff;
 }
+
 .layout-center .body {
     margin: -160rpx 60rpx 0;
 }
-form{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-input{
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC';
-    font-size: 32rpx;
-    line-height: 1.5;
-}
+
 .layout-center .box {
     background-color: #fff;
-    box-shadow: 0 24rpx 44rpx 0 rgba(0,0,0,0.15);
+    box-shadow: 0 24rpx 44rpx 0 rgba(0, 0, 0, 0.15);
 }
+
 .layout-center .box {
     background-color: #fff;
-    box-shadow: 0 24rpx 44rpx 0 rgba(0,0,0,0.15);
+    box-shadow: 0 24rpx 44rpx 0 rgba(0, 0, 0, 0.15);
 }
+
 .layout-center .box {
     background-color: #fff;
-    box-shadow: 0 24rpx 44rpx 0 rgba(0,0,0,0.15);
+    box-shadow: 0 24rpx 44rpx 0 rgba(0, 0, 0, 0.15);
 }
-.username{
-   width: 100%;
+
+.username, .password {
+    width: 100%;
     height: 120rpx;
-    padding: 36rpx 20rpx;
     text-align: center;
 }
+
 .layout-center .box .form-item:last-child {
     border-bottom: none;
 }
+
 .form .form-field {
     background-color: #fff;
-    text-align: center
+    text-align: center;
 }
+
 .layout-center .form-buttons {
     margin: 80rpx 0 0;
 }
-.btn, button, input[type=submit] {
-    display: block;
-    width: 100%;
-    height: 100rpx;
-    padding: 0;
-    color: #fff;
-    line-height: 100rpx;
-    text-decoration: none;
-    text-align: center;
-    border: 0;
-    border-radius: 8rpx;
-    background: #5bc4c7;
-    outline: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
+
 .layout-center .tiny {
     margin-top: 40rpx;
     font-size: 24rpx;
     color: #999;
+}
+
+.form-item {
+    position: relative;
+}
+
+.form-item:first-child::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
 }
