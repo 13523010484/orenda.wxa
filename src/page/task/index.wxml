@@ -1,58 +1,163 @@
 <!--任务-->
 <view class="container">
-        <view class="page-body">
-                <!-- tab切换 -->
-                <view class='todo-tabs'>
-                        <view class='tab active'>我负责的</view>
-                        <view class='tab'>我发起的</view>
-                </view>
-
-                <!--未完成列表  -->
-                <view class='completed-todos'>
-                        <view bindtap='jumpDetail' id='btn-show-completed-todos'>
-                                <text class='content'>未完成</text>
-                                <text class='icon'>>></text>
-                        </view>
-
-                        <view class='todolist'>
-                                <view class='todos-container'>
-                                        <view bindtap='jumpDetail'>
-                                                <view class='item-name'>
-                                                        <text class='todo-rest'>活动报名项目</text>
-                                                </view>
-                                                <view class='item-content'>贾秋花
-                                                        <text style='color:red;'>17/09/22</text> 未完成
-                                                        <text>详情</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                          <view class='todolist'>
-                                <view class='todos-container'>
-                                        <view bindtap='jumpDetail'>
-                                                <view class='item-name'>
-                                                        <text class='todo-rest'>活动报名项目</text>
-                                                </view>
-                                                <view class='item-content'>贾秋花
-                                                        <text style='color:red;'>17/09/22</text> 未完成
-                                                        <text>详情</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                          <view class='todolist'>
-                                <view class='todos-container'>
-                                        <view bindtap='jumpDetail'>
-                                                <view class='item-name'>
-                                                        <text class='todo-rest'>活动报名项目</text>
-                                                </view>
-                                                <view class='item-content'>贾秋花
-                                                        <text style='color:red;'>17/09/22</text> 未完成
-                                                        <text>详情</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                </view>
+    <view class="page-body">
+        <!-- tab切换 -->
+        <view class='tab_warp'>
+            <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">我负责的</view>
+            <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">我发起的</view>
         </view>
+        <!--我负责的  -->
+        <block wx:if="{{tab_status==0}}">
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd ">
+                    <text class='lists_hd__desc'>待完成</text>
+                    <text class='icon'></text>
+                </view>
+                <view class="todo_cell_warp ">
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'> 数据挖掘模型实施</view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text>2017-09-22</text>
+                            <text>奥伦达CMS系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            物业电子巡更系统操作手册编写
+                        </view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text>2017-09-20</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text class="assign_due ">2016-08-23 已逾期</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!--未完成列表  -->
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd ">
+                    <text class='lists_hd__desc'>已完成</text>
+                    <text class='icon'></text>
+                </view>
+                <view class="todo_cell_warp ">
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'> 数据挖掘模型实施</view>
+                        <view class='item-content'>
+                            <text>武专红</text>
+                            <text>2016-09-22</text>
+                            <text>奥伦达CMS系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            物业电子巡更系统操作手册编写
+                        </view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2015-09-23</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2015-08-23</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <!--我发起的  -->
+        <block wx:if="{{tab_status==1}}">
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd ">
+                    <text class='lists_hd__desc'>待审核</text>
+                    <text class='icon'></text>
+                </view>
+                <view class="todo_cell_warp ">
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'> 数据挖掘模型实施</view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text>2017-09-22</text>
+                            <text>奥伦达CMS系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            物业电子巡更系统操作手册编写
+                        </view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text>2017-09-20</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <text>贾秋花</text>
+                            <text class="assign_due ">2016-08-23 已逾期</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!--已完成列表  -->
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd ">
+                    <text class='lists_hd__desc'>已完成</text>
+                    <text class='icon'></text>
+                </view>
+                <view class="todo_cell_warp ">
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'> 数据挖掘模型实施</view>
+                        <view class='item-content'>
+                            <text>武专红</text>
+                            <text>2016-09-22</text>
+                            <text>奥伦达CMS系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            物业电子巡更系统操作手册编写
+                        </view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2015-09-23</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail'>
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2015-08-23</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+
+    </view>
 </view>
