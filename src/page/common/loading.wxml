@@ -1,0 +1,4 @@
+<template name="loading">
+  <view class="loading" hidden="{{showloading}}">加载中...</view>
+  <view class="loading" hidden="{{!showloading}}" wx:if="{{page_total==0}}">暂无内容</view>
+</template>

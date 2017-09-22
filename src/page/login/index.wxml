@@ -1,0 +1,11 @@
+<!--登录-->
+
+<view class="container">
+    <view class="page-body">
+        <text>登录</text>
+
+        <view class="btn-area" bindtap="go_login">
+            <button type="primary">登录</button>
+        </view>
+    </view>
+</view>
