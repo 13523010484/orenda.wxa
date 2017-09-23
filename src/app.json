@@ -5,6 +5,8 @@
         "page/task/report",
         "page/project/index",
         "page/me/index",
+        "page/me/task",
+        "page/bug/index",
         "page/login/index"
     ],
     "window": {

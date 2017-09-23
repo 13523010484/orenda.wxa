@@ -1,25 +1,28 @@
 <!--任务-->
 <view class="container">
     <view class="page-body">
-        <!-- tab切换 -->
-        <view class='tab_warp'>
-            <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">我负责的</view>
-            <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">我发起的</view>
-        </view>
-        <!--我负责的  -->
-        <block wx:if="{{tab_status==0}}">
-            <view class='todo_lists'>
+      <view class='todo_lists'>
                 <view bindtap='change_status' class="lists_hd" id="open1">
                     <text class='lists_hd__desc'>待完成</text>
-                    <text class='icon'></text>
+                    <text class="icon {{open1?'icon_active':''}}"></text>
                 </view>
-                <view class="todo_cell_warp ">
+                <view class="todo_cell_warp" hidden='{{!open1}}'>
                     <view class='todo_cell' id="1" bindtap='jumpDetail'>
                         <view class='item-name'> 数据挖掘模型实施</view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2017-09-22</text>
-                            <text>奥伦达CMS系统</text>
+                            <view class="item-cells">
+                                <!--测试头像地址，请获取微信头像  -->
+                                <image src='https://avatars1.githubusercontent.com/u/16190010?v=4&s=40'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-22</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>奥伦达CMS系统</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="1">
@@ -27,9 +30,19 @@
                             物业电子巡更系统操作手册编写
                         </view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2017-09-20</text>
-                            <text>物业电子巡更系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-20</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
+
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="1">
@@ -37,9 +50,18 @@
                             梳理巡更系统函数和存储过程
                         </view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text class="assign_due ">2016-08-23 已逾期</text>
-                            <text>物业电子巡更系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text class="assign_due ">2016-08-23 已逾期</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
                         </view>
                     </view>
                 </view>
@@ -47,9 +69,9 @@
             <view class='todo_lists'>
                 <view bindtap='change_status' class="lists_hd " id="open2">
                     <text class='lists_hd__desc'>已完成</text>
-                    <text class='icon'></text>
+                    <text class="icon {{open2?'icon_active':''}}"></text>
                 </view>
-                <view class="todo_cell_warp ">
+                <view class="todo_cell_warp " hidden='{{!open2}}'>
                     <view class='todo_cell' bindtap='jumpDetail' id="2">
                         <view class='item-name'> 熟悉会员CMS管理系统与物业管理系统，达到能接手处理相关问题。</view>
                         <view class='item-content'>
@@ -90,83 +112,6 @@
                     </view>
                 </view>
             </view>
-        </block>
-        <!--我发起的  -->
-        <block wx:if="{{tab_status==1}}">
-            <view class='todo_lists'>
-                <view bindtap='change_status' class="lists_hd " id="open3">
-                    <text class='lists_hd__desc'>待审核</text>
-                    <text class='icon'></text>
-                </view>
-                <view class="todo_cell_warp ">
-                    <view class='todo_cell' bindtap='jumpDetail' id="3">
-                        <view class='item-name'> 明源移动案场项目</view>
-                        <view class='item-content'>
-                            <text>刘建利</text>
-                            <text>2017-06-21</text>
-                            <text>明源移动案场项目</text>
-                        </view>
-                    </view>
-                    <view class='todo_cell' bindtap='jumpDetail' id="3">
-                        <view class='item-name'>
-                            IT集成化方案研究，以淘宝、携程为案例研究，形成研究报告
-                        </view>
-                        <view class='item-content'>
-                            <text>刘军海</text>
-                            <text>2017-03-01</text>
-                            <text>计划性任务</text>
-                        </view>
-                    </view>
-                    <view class='todo_cell' bindtap='jumpDetail' id="3">
-                        <view class='item-name'>
-                            学习CMS系统运维
-                        </view>
-                        <view class='item-content'>
-                            <text>申振杰</text>
-                            <text>2017-09-05</text>
-                            <text>奥伦达CMS系统</text>
-                        </view>
-                    </view>
-                    <view class='todo_cell' bindtap='jumpDetail' id="3">
-                        <view class='item-name'>
-                            ldap统一账户体系研究
-                        </view>
-                        <view class='item-content'>
-                            <text>刘军海</text>
-                            <text>2017-04-07</text>
-                            <text>计划性任务</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <!--已完成列表  -->
-            <view class='todo_lists'>
-                <view bindtap='change_status' class="lists_hd" id="open4">
-                    <text class='lists_hd__desc'>已完成</text>
-                    <text class='icon'></text>
-                </view>
-                <view class="todo_cell_warp ">
-                    <view class='todo_cell' bindtap='jumpDetail' id="2">
-                        <view class='item-name'> 思考下乡计划</view>
-                        <view class='item-content'>
-                            <text>申振杰</text>
-                            <text>2017-09-24 </text>
-                            <text>计划性任务</text>
-                        </view>
-                    </view>
-                    <view class='todo_cell' bindtap='jumpDetail' id="2">
-                        <view class='item-name'>
-                            梳理巡更系统函数和存储过程
-                        </view>
-                        <view class='item-content'>
-                            <text>申振杰</text>
-                            <text>2017-08-10</text>
-                            <text>物业电子巡更系统</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </block>
 
     </view>
 </view>

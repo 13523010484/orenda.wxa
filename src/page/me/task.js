@@ -4,11 +4,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        tab_status: 0,
         open1: true,
-        open2: false,
-        open3: true,
-        open4: false
+        open2: false
     },
 
     /**
@@ -16,21 +13,9 @@ Page({
      */
     onLoad: function (options) {
 
-        //模拟登录跳转
-        // wx.navigateTo({
-        //     url: '/page/login/index',
-        //     success: function (res) { },
-        //     fail: function (res) { },
-        //     complete: function (res) { },
-        // })
 
     },
-    // 切换类型
-    switch_tab: function (e) {
-        this.setData({
-            tab_status: e.target.id
-        })
-    },
+
     // 折叠面板
     change_status: function (e) {
         this.data[e.currentTarget.id] = !this.data[e.currentTarget.id]

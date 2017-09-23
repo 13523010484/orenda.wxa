@@ -1,5 +1,2 @@
 /* 任务样式  */
-
-.page-body {
-    margin-bottom: 40rpx;
-}
+@import "/page/task/index.wxss";
