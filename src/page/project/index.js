@@ -4,7 +4,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-
     },
 
     /**
@@ -14,4 +13,17 @@ Page({
 
     },
 
+        /* 新建任务*/
+    btnCreate: function(){
+    },
+
+    // 点击列表跳转到详情
+    jumpDetail: function (e) {
+            wx.navigateTo({
+                    url: '',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+            })
+    }
 })
