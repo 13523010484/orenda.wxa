@@ -1,6 +1,33 @@
 <!--我的-->
 <view class="container">
     <view class="page-body">
-        <text>我的</text>
+
+                <!--获取用户微信头像  -->
+                <view class='header'>
+                        <view class='user-avatar'>
+                                <image src='/image/avatar.jpg'></image>
+                        </view>
+                        <view class='user-name'>贾秋花</view>
+                </view>
+
+                <!--我的任务  -->
+                 <view class='todo_lists'>
+                        <view bindtap='jumpDetail' class="lists_hd ">
+                                <text class='lists_hd__desc'>我的任务</text>
+                                <text class='icon'></text>
+                        </view>
+                        <view bindtap='jumpDetail' class="lists_hd ">
+                                <text class='lists_hd__desc'>bug列表</text>
+                                <text class='icon'></text>
+                        </view>
+                </view>
+
+                <!--退出登录  -->
+                 <view class='todo_lists'>
+                        <view bindtap='signOut' class="lists_hd ">
+                                <text class='lists_hd__desc'>退出登录</text>
+                                <text class='icon'></text>
+                        </view>
+                </view>
     </view>
 </view>

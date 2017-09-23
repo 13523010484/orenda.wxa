@@ -14,4 +14,22 @@ Page({
 
     },
 
+    jumpDetail: function(){
+            wx.navigateTo({
+                    url: '',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+            })
+    },
+
+    signOut: function(){
+            wx.navigateTo({
+                    url: '',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+            })
+    }
+
 })

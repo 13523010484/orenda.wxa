@@ -1,24 +1,32 @@
 <!--项目-->
 <view class="container">
     <view class="page-body">
+
+        <!--项目列表  -->
         <view class='projects'>
+
                 <view class='project' bindtap='jumpDetail'>
                         <image src="/image/project_active.png"></image>
                         <text class='project-name'>奥伦达CMS系统</text> 
                 </view>
+
                  <view class='project' bindtap='jumpDetail'>
                         <image src="/image/project_active.png"></image>
                         <text class='project-name'>小蜗牛任务追踪系统</text> 
                 </view>
+
                  <view class='project' bindtap='jumpDetail'>
                         <image src="/image/project_active.png"></image>
                         <text class='project-name'>物业管理系统计划性任务</text> 
                 </view>
+
                 <view class='project' bindtap='jumpDetail'>
                         <image src="/image/project_active.png"></image>
                         <text class='project-name'>计划性任务</text> 
                 </view>
         </view>
-        <view bindtap='btnCreate' class='button-create'>新建任务</view>
+
+                <!-- 跳转创建任务页 -->
+               <navigator url='' class="float-btn" hover-class='float-btn-active'>新建任务</navigator>
     </view>
 </view>
