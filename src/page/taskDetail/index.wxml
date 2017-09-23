@@ -13,15 +13,28 @@
                 <view class="todo_cell_warp ">
                      <view class='todo_cell'>
                         <view class='name'>
-                            明源移动案场项目
+                                任务详情
                         </view>
                         <view class='content'>
-                            <text>2017-09-20</text>
-                            <text>完成</text>
+                                <text>时间：</text>
+                                <text>2017-09-20~</text>
+                                <text>2017-09-23</text>
                         </view>
-                         <view class='content'>
+                        <view class='content'>
                             <text>汇报内容：</text>
                             <text>了解明源移动案场软件，帮助项目单位梳理需求、项目风险点把控及项目上线配合等</text>
+                        </view>
+                        <view class='content'>
+                            <text>名称：</text>
+                            <text>小程序开发测试</text>
+                        </view>
+                      <view class='content'>
+                            <text>名称：</text>
+                            <text>小程序开发测试</text>
+                        </view>
+                        <view class='content'>
+                            <text>状态：</text>
+                            <text>已审核</text>
                         </view>
                     </view>
 
