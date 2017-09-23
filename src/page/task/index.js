@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
 
     /**
@@ -15,7 +16,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getUserInfo();
         //模拟登录跳转
         // wx.navigateTo({
         //     url: '/page/login/index',
@@ -24,6 +25,37 @@ Page({
         //     complete: function (res) { },
         // })
 
+    },
+    /**
+     * 获取微信公共信息
+    */
+    getUserInfo() {
+        var that = this
+        if (app.globalData.haswxLogin === false) {
+            wx.login({
+                success: _getUserInfo
+            })
+        } else {
+            _getUserInfo()
+        }
+        function _getUserInfo() {
+            wx.getUserInfo({
+                success(res) {
+                    app.globalData.haswxLogin = res.userInfo
+                    that.setData({
+                        userInfo: res.userInfo
+                    })
+                },
+                //用户拒绝微信授权的情况，显示一个默认头像
+                fail(res) {
+                    that.setData({
+                        userInfo: {
+                            avatarUrl: '/image/task_user.png'
+                        }
+                    })
+                }
+            })
+        }
     },
     // 切换类型
     switch_tab: function (e) {

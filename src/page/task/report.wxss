@@ -1,7 +1,7 @@
 /* page/task/report.wxss */
 
 input, textarea {
-    border-top: 1rpx solid #e8e8e8;
+    border-top: 1rpx solid #e5e5e5;
 }
 
 .page-body {

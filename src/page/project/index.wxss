@@ -1,30 +1,36 @@
 /* 项目列表样式  */
-.project{
-        font-size: 28rpx;
-        color: #222;
-        border-bottom: 2rpx solid #e8e8e8;
-         background-color: #fff;
-         padding: 18rpx 30rpx; 
-         display: inline-flex;
-         justify-content: flex-start;
-         align-content: center;
-          width: calc(100% - 36rpx); 
+
+.projects {
+    margin-bottom: 40rpx;
 }
+
+.project {
+    font-size: 28rpx;
+    color: #222;
+    border-bottom: 1rpx solid #e5e5e5;
+    background-color: #fff;
+    padding: 18rpx 30rpx;
+}
+
 .project:active {
     background-color: #f2f2f2;
 }
-.project:first-child{
-        border-top: 2rpx solid #e8e8e8;        
+
+.project:first-child {
+    border-top: 1rpx solid #e5e5e5;
 }
-.project-name{
-        line-height: 64rpx;
-        color: #222;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+
+.project-name {
+    line-height: 64rpx;
+    color: #222;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-.project image{ 
-         margin-right: 20rpx; 
-        width: 64rpx;
-        height: auto;
+
+.project image {
+    margin-right: 20rpx;
+    width: 64rpx;
+    height: 64rpx;
+    vertical-align: middle;
 }

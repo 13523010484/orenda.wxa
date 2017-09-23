@@ -60,8 +60,8 @@ icon {
     height: 88rpx;
     line-height: 88rpx;
     color: #222;
-    border-top: 1rpx solid #e8e8e8;
-    border-bottom: 1rpx solid #e8e8e8;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -115,7 +115,7 @@ icon {
     color: #222;
     font-size: 28rpx;
     background-color: #fff;
-    border-bottom: 1rpx solid #e8e8e8;
+    border-bottom: 1rpx solid #e5e5e5;
     word-break: break-all;
     word-wrap: break-word;
 }
@@ -178,7 +178,7 @@ icon {
 .form_warp textarea, .form_warp input[type="text"] {
     padding: 20rpx 30rpx;
     min-height: 80rpx;
-    border-bottom: 1rpx solid #e8e8e8;
+    border-bottom: 1rpx solid #e5e5e5;
     background-color: #fff;
 }
 

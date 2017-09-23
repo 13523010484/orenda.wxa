@@ -4,6 +4,7 @@
         "page/taskDetail/index",
         "page/task/report",
         "page/project/index",
+        "page/project/lists",
         "page/me/index",
         "page/me/task",
         "page/bug/index",

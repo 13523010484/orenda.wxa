@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
 
     /**
@@ -11,7 +12,35 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getUserInfo();
+    },
+    /**
+   * 获取微信公共信息
+   */
+    getUserInfo() {
+        var that = this
+        if (app.globalData.haswxLogin === false) {
+            wx.login({
+                success: _getUserInfo
+            })
+        } else {
+            _getUserInfo()
+        }
+        function _getUserInfo() {
+            wx.getUserInfo({
+                success(res) {
+                    app.globalData.haswxLogin = res.userInfo
+                    that.setData({
+                        userInfo: res.userInfo
+                    })
+                },
+                fail(res) {
+                    that.setData({
+                        userInfo: true
+                    })
+                }
+            })
+        }
     },
     /**
      * 退出登录
@@ -24,16 +53,9 @@ Page({
 
         setTimeout(function () {
             wx.hideLoading()
-            wx.showToast({
-                title: '退出成功',
-                icon: 'success',
-                duration: 1000
+            wx.navigateTo({
+                url: '/page/login/index'
             })
-            setTimeout(function () {
-                wx.navigateTo({
-                    url: '/page/login/index'
-                })
-            }, 500)
         }, 500)
     }
 

@@ -19,7 +19,7 @@
                         <view class='item-content'>
                             <view class="item-cells">
                                 <!--测试头像地址，请获取微信头像  -->
-                                <image src='https://avatars1.githubusercontent.com/u/16190010?v=4&s=40'></image>
+                                <image src='{{userInfo.avatarUrl}}'></image>
                                 <text>贾秋花</text>
                             </view>
                             <view class="item-cells">
@@ -38,7 +38,7 @@
                         </view>
                         <view class='item-content'>
                             <view class="item-cells">
-                                <image src='/image/task_user.png'></image>
+                                <image src='{{userInfo.avatarUrl}}'></image>
                                 <text>贾秋花</text>
                             </view>
                             <view class="item-cells">
@@ -58,7 +58,7 @@
                         </view>
                         <view class='item-content'>
                             <view class="item-cells">
-                                <image src='/image/task_user.png'></image>
+                                <image src='{{userInfo.avatarUrl}}'></image>
                                 <text>贾秋花</text>
                             </view>
                             <view class="item-cells">
@@ -82,9 +82,18 @@
                     <view class='todo_cell' bindtap='jumpDetail' id="2">
                         <view class='item-name'> 熟悉会员CMS管理系统与物业管理系统，达到能接手处理相关问题。</view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2017-03-22</text>
-                            <text>计划性任务</text>
+                            <view class="item-cells">
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-03-22</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="2">
@@ -92,9 +101,18 @@
                             每周学习内容汇总制作ppt并上传至小蜗牛
                         </view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2016-09-23</text>
-                            <text>小蜗牛任务追踪系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-09-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>小蜗牛任务追踪系统</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="2">
@@ -102,9 +120,18 @@
                             物业系统的软件著作权、商标权申请登记
                         </view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2015-08-23</text>
-                            <text>物业电子巡更系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-08-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="2">
@@ -112,9 +139,18 @@
                             物业系统的软件著作权、商标权申请登记
                         </view>
                         <view class='item-content'>
-                            <text>贾秋花</text>
-                            <text>2015-08-23</text>
-                            <text>物业电子巡更系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-08-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
                         </view>
                     </view>
                 </view>
@@ -131,9 +167,18 @@
                     <view class='todo_cell' bindtap='jumpDetail' id="3">
                         <view class='item-name'> 明源移动案场项目</view>
                         <view class='item-content'>
-                            <text>刘建利</text>
-                            <text>2017-06-21</text>
-                            <text>明源移动案场项目</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘建利</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-06-21</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>明源移动案场项目</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="3">
@@ -141,9 +186,18 @@
                             IT集成化方案研究，以淘宝、携程为案例研究，形成研究报告
                         </view>
                         <view class='item-content'>
-                            <text>刘军海</text>
-                            <text>2017-03-01</text>
-                            <text>计划性任务</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘军海</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-03-01</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="3">
@@ -151,9 +205,18 @@
                             学习CMS系统运维
                         </view>
                         <view class='item-content'>
-                            <text>申振杰</text>
-                            <text>2017-09-05</text>
-                            <text>奥伦达CMS系统</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>申振杰</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-05</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>奥伦达CMS系统</text>
+                            </view>
                         </view>
                     </view>
                     <view class='todo_cell' bindtap='jumpDetail' id="3">
@@ -161,9 +224,18 @@
                             ldap统一账户体系研究
                         </view>
                         <view class='item-content'>
-                            <text>刘军海</text>
-                            <text>2017-04-07</text>
-                            <text>计划性任务</text>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘军海</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-04-07</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
                         </view>
                     </view>
                 </view>
