@@ -22,7 +22,7 @@
                     </view>
 
                     <view class='form-buttons'>
-                        <button type='primary' class='btn'>登录</button>
+                        <button type='primary' class='btn' bindtap='go_login'>登录</button>
                     </view>
                 </form>
             </view>

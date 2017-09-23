@@ -89,9 +89,9 @@ icon {
 .todo_lists .lists_hd text.icon::after {
     content: " ";
     display: inline-block;
-    height: 6px;
-    width: 6px;
-    border-width: 2px 2px 0 0;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 4rpx 4rpx 0 0;
     border-color: #c8c8cd;
     border-style: solid;
     -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
@@ -100,7 +100,13 @@ icon {
     position: absolute;
     top: 50%;
     margin-top: -4px;
-    right: 2px;
+    right: 4rpx;
+}
+
+.todo_lists .lists_hd text.icon.icon_active::after {
+
+    border-width: 0 4rpx 4rpx 0;
+  
 }
 
 .todo_cell {
@@ -143,4 +149,63 @@ icon {
 
 .todo_cell .item-content>text {
     margin-right: 10rpx;
+}
+
+/*悬浮框  */
+
+.float-btn {
+    position: fixed;
+    right: 0;
+    bottom: 40rpx;
+    left: 0;
+    margin: auto;
+    width: 180rpx;
+    color: #fff;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 68rpx;
+    border-radius: 34rpx;
+    background-color: #4ea5ad;
+    box-shadow: 1rpx 1rpx 1rpx rgba(0, 0, 0, 0.1);
+    z-index: 9;
+}
+
+.float-btn-active {
+    background-color: #f2f2f2;
+    color: #999;
+}
+
+/*form  */
+
+.form_warp textarea, .form_warp input[type="text"] {
+    padding: 20rpx 30rpx;
+    min-height: 80rpx;
+    border-bottom: 1rpx solid #e8e8e8;
+    background-color: #fff;
+    width: 100%;
+}
+
+.section__title {
+    margin-top: 0.77em;
+    margin-bottom: 0.3em;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.section__title-tips {
+    margin-top: 0.3em;
+    color: #999;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    font-size: 28rpx;
+}
+
+.form_warp .textarea {
+    word-wrap: break-word;
+    /* height: 140px;
+    min-height: 140px;
+    line-height: 150%;
+    vertical-align: top; */
 }

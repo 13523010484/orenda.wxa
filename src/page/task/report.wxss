@@ -1,0 +1,16 @@
+/* page/task/report.wxss */
+
+input, textarea {
+    border-top: 1rpx solid #e8e8e8;
+}
+
+.slider-view {
+    padding: 20rpx 30rpx;
+}
+
+.slider-view .title {
+    margin-top: 0.77em;
+    margin-bottom: 0.3em;
+    color: #999;
+    font-size: 28rpx;
+}

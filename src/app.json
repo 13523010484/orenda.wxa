@@ -2,6 +2,7 @@
     "pages": [
         "page/task/index",
         "page/taskDetail/index",
+        "page/task/report",
         "page/project/index",
         "page/me/index",
         "page/login/index"
