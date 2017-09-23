@@ -1,6 +1,7 @@
 {
     "pages": [
         "page/task/index",
+        "page/taskDetail/index",
         "page/project/index",
         "page/me/index",
         "page/login/index"

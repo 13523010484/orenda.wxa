@@ -36,7 +36,7 @@ Page({
     // 点击列表跳转到详情
     jumpDetail: function (e) {
         wx.navigateTo({
-            url: '',
+            url: '../taskDetail/index',
             success: function (res) { },
             fail: function (res) { },
             complete: function (res) { },
