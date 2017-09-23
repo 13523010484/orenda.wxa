@@ -1,0 +1,33 @@
+<!--page/taskDetail/index.wxml-->
+<!--任务-->
+<view class="container">
+    <view class="page-body">
+        <view class='simple-checkbox'>
+            <view class='btn-ok'>
+              <view>点击</view>
+              <view>完成</view>
+            </view>
+        </view>
+        <block>
+            <view class='todo_lists'>
+                <view class="todo_cell_warp ">
+                     <view class='todo_cell'>
+                        <view class='name'>
+                            明源移动案场项目
+                        </view>
+                        <view class='content'>
+                            <text>2017-09-20</text>
+                            <text>完成</text>
+                        </view>
+                         <view class='content'>
+                            <text>汇报内容：</text>
+                            <text>了解明源移动案场软件，帮助项目单位梳理需求、项目风险点把控及项目上线配合等</text>
+                        </view>
+                    </view>
+
+                </view>
+            </view>
+        </block>
+
+    </view>
+</view>

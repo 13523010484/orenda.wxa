@@ -1,0 +1,37 @@
+/* page/taskDetail/index.wxss */
+.simple-checkbox{
+  padding: 70rpx 0;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.05);
+}
+.simple-checkbox .btn-ok{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: rgba(83,176,56,0.87);
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center; 
+   align-content: space-around; 
+  flex-direction: column; 
+}
+.btn-ok>view{
+  line-height:45rpx;
+  text-align: center;
+}
+.todo_cell .name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.todo_cell .content {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 6rpx;
+}
+.todo_cell .content>text:first-child{
+  margin-right: 10rpx
+}
