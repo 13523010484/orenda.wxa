@@ -104,9 +104,7 @@ icon {
 }
 
 .todo_lists .lists_hd text.icon.icon_active::after {
-
     border-width: 0 4rpx 4rpx 0;
-  
 }
 
 .todo_cell {
@@ -182,7 +180,6 @@ icon {
     min-height: 80rpx;
     border-bottom: 1rpx solid #e8e8e8;
     background-color: #fff;
-    width: 100%;
 }
 
 .section__title {
@@ -192,6 +189,7 @@ icon {
     padding-right: 30rpx;
     color: #999;
     font-size: 28rpx;
+    display: block;
 }
 
 .section__title-tips {
@@ -204,8 +202,5 @@ icon {
 
 .form_warp .textarea {
     word-wrap: break-word;
-    /* height: 140px;
-    min-height: 140px;
-    line-height: 150%;
-    vertical-align: top; */
+    width: inherit;
 }

@@ -3,3 +3,17 @@
 .page-body {
     margin-bottom: 40rpx;
 }
+
+.item-cells {
+    display: inline-block;
+    margin-right: 15rpx;
+}
+
+.item-cells image {
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 24rpx;
+    vertical-align: middle;
+    margin-right: 4rpx;
+    margin-top: -2rpx;
+}
