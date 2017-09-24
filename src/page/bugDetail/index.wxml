@@ -20,9 +20,9 @@
                 </view>
             </view>
         </view>
-        <view class='content editor-style gallery-wrap'>
+        <view class='content gallery-wrap'>
             <text>服务号预订库存控制出错</text>
-            <image src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/7/DBDAF62FB09D95641FD96A1B829D52A4'></image>
+                  <image mode='widthFix' src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/7/DBDAF62FB09D95641FD96A1B829D52A4'></image>
         </view>
     </view>
 </view>

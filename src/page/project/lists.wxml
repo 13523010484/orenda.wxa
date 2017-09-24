@@ -1,0 +1,107 @@
+<!--page/project/lists.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view class='todo_lists'>
+            <block wx:for="{{lists.rows}}" wx:key="{{item.id}}">
+                <view class="todo_cell_warp ">
+                    <view class='todo_cell' bindtap='jumpDetail' id="1" wx:if="{{item.children.length==0}}">
+                        <view class='item-name'>
+                            {{item.name}}
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>{{item.executor}}</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
+                            </view>
+                        </view>
+                    </view>
+
+                </view>
+                <!--只显示二级任务  -->
+                <view class='todo_lists'>
+                    <block wx:if="{{item.children && item.children.length>0}}">
+                        <view class="lists_hd ">
+                            <text class="icon_child"></text>
+                            <text class='lists_hd__desc'>{{item.name}}</text>
+                        </view>
+                        <view class="todo_cell_warp " wx:for="{{item.children}}" wx:for-item="itemName" wx:key="{{itemName.id}}">
+                            <view class='todo_cell' bindtap='jumpDetail' id="2">
+                                <view class='item-name'>
+                                    {{itemName.name}}
+                                </view>
+                                <view class='item-content'>
+                                    <view class="item-cells">
+                                        <image src='/image/task_user.png'></image>
+                                        <text>{{itemName.executor}}</text>
+                                    </view>
+                                    <view class="item-cells">
+                                        <image src='/image/task_time.png'></image>
+                                        <text>{{itemName.ask_begin_time}} ~ {{itemName.ask_end_date}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </block>
+
+        </view>
+
+        <!-- 跳转创建任务页 -->
+        <navigator url='' class="float-btn" hover-class='float-btn-active' bindtap='alert'>新建任务</navigator>
+        <!--  源代码-->
+        <!-- <view class='todo_lists'>
+            <view class="todo_cell_warp ">
+
+                <view class='todo_cell' bindtap='jumpDetail' id="2">
+                    <view class='item-name'>
+                        物业系统的软件著作权、商标权申请登记
+                    </view>
+                    <view class='item-content'>
+                        <text>贾秋花</text>
+                        <text>2015-08-23</text>
+                        <text>物业电子巡更系统</text>
+                    </view>
+                </view>
+            </view>
+            <view class="todo_cell_warp ">
+
+                <view class='todo_cell' bindtap='jumpDetail' id="2">
+                    <view class='item-name'>
+                        物业系统的软件著作权、商标权申请登记
+                    </view>
+                    <view class='item-content'>
+                        <text>贾秋花</text>
+                        <text>2015-08-23</text>
+                        <text>物业电子巡更系统</text>
+                    </view>
+                </view>
+                <view class='todo_lists'>
+                    <view class="lists_hd ">
+                        <text class="icon_child"></text>
+                        <text class='lists_hd__desc'>安卓端任务</text>
+                    </view>
+                    <view class="todo_cell_warp ">
+
+                        <view class='todo_cell' bindtap='jumpDetail' id="2">
+                            <view class='item-name'>
+                                物业系统的软件著作权、商标权申请登记
+                            </view>
+                            <view class='item-content'>
+                                <text>贾秋花</text>
+                                <text>2015-08-23</text>
+                                <text>物业电子巡更系统</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view> -->
+
+    </view>
+</view>

@@ -1,10 +1,8 @@
 /*bug详情样式*/
 @import  "/page/task/index.wxss";
-.todo_cell:first-child{
-         border-top: 1rpx solid #e5e5e5;
-}
 .header {
-    padding: 20rpx 30rpx 40rpx;
+         border-top: 1rpx solid #e5e5e5;
+    padding: 30rpx 30rpx 40rpx;
     background-color: #fff;
 }
 .todo_cell{
@@ -12,28 +10,26 @@
   border: none;
 }
  .header .resource-info {
-    margin-bottom: 20rpx;
+    margin-bottom: 30rpx;
     font-size: 24rpx;
     color: #999;
 }
 .item-name{
+        padding-left:0; 
   font-size: 40rpx;
 }
 .content {
-    padding: 0 30rpx 40rpx;
-    min-height: 400rpx;
+    padding: 0 30rpx;
     border-bottom: 1rpx solid #e8e8e8;
     background-color: #fff;
 }
 .editor-style {
     font-size: 32rpx;
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC';
     line-height: 1.6;
     color: #333;
-    outline: none;
     word-wrap: break-word;
     overflow-x: auto;
 }
-.editor-style image {
-  max-width: 100%;
+.gallery-wrap image{
+        width: 100%;
 }

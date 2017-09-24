@@ -1,0 +1,73 @@
+/* page/project/lists.wxss */
+@import "/page/task/index.wxss";
+
+.page-body {
+    margin-bottom: 150rpx;
+}
+
+.todo_lists {
+    background-color: transparent;
+}
+
+.todo_lists .lists_hd {
+    background-color: #fff;
+}
+
+.todo_lists .todo_lists {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.todo_lists .todo_lists .lists_hd {
+    border-top: 0;
+}
+
+.todo_lists .todo_lists text.icon {
+    text-align: left;
+}
+
+.todo_lists .todo_lists .icon_child {
+    color: #999;
+    position: relative;
+    margin-right: 40rpx;
+}
+
+.todo_lists .lists_hd:active {
+    background-color: transparent;
+}
+
+.todo_lists .todo_lists .icon_child::after {
+    content: " ";
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 0 4rpx 4rpx 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: 0;
+}
+
+.todo_lists .todo_lists .todo_cell {
+    padding-left: 80rpx;
+}
+
+.todo_lists .todo_cell_warp {
+    margin-top: 20rpx;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.todo_lists .todo_lists .todo_cell_warp {
+    margin-top: 0;
+    border-top: 0;
+}
+
+.lists_hd__desc {
+    color: #333;
+    font-weight: bold;
+}
