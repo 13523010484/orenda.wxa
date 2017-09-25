@@ -1,0 +1,15 @@
+.header{
+        margin: 39rpx auto;
+    width: 136rpx;
+    color: #5bc4c7;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    background-color: rgba(174,212,208,0.3);
+}
+.demand-name{
+         padding: 0 30rpx  0 10rpx; 
+         text-align: right;
+     border-bottom: 1rpx solid #e8e8e8; 
+}

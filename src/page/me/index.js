@@ -42,6 +42,19 @@ Page({
             })
         }
     },
+
+    /**
+     * 
+     **/
+    jumpDetail: function () {
+            wx.navigateTo({
+                    url: '/page/weekDemand/index',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+            })
+    },
+
     /**
      * 退出登录
      */

@@ -1,0 +1,2 @@
+@import  "/page/task/index.wxss";
+@import  "/page/bugDetail/index.wxss";

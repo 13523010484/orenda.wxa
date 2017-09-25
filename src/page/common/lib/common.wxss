@@ -36,10 +36,6 @@ icon {
     color: #5bc4c7;
 }
 
-.tab_warp .tab:active {
-    background-color: #f2f2f2;
-}
-
 .tab_warp .tab.active {
     background-color: #5bc4c7;
     color: #fff;

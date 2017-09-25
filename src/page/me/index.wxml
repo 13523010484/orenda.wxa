@@ -1,4 +1,4 @@
-<!--我的-->
+<!--更多-->
 <view class="container">
     <view class="page-body">
 
@@ -19,6 +19,13 @@
                 </view>
                 <text class='icon'></text>
             </navigator>
+
+             <view bindtap='jumpDetail' class="lists_hd no_lists_hd" hover-class='none' url="task">
+                <view class='lists_hd__desc'>
+                    <image src='/image/week-demand.png'></image> 本周需求
+                </view>
+                <text class='icon'></text>
+            </view>
 
             <navigator class="lists_hd no_lists_hd" hover-class='none' class="lists_hd" url="/page/bug/index">
                 <view class='lists_hd__desc'>
