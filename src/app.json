@@ -9,9 +9,10 @@
         "page/me/task",
         "page/bug/index",
         "page/bugDetail/index",
-        "page/login/index",
         "page/weekDemand/index",
-        "page/weekDemandDetail/index"
+        "page/weekDemandDetail/index",
+        "page/login/index",
+        "page/manage/index"
     ],
     "window": {
         "navigationBarTextStyle": "black",
@@ -36,6 +37,12 @@
                 "iconPath": "image/project.png",
                 "selectedIconPath": "image/project_active.png",
                 "text": "项目"
+            },
+            {
+                "pagePath": "page/manage/index",
+                "iconPath": "image/zhuizong.png",
+                "selectedIconPath": "image/zhuizong_active.png",
+                "text": "追踪"
             },
             {
                 "pagePath": "page/me/index",
