@@ -7,7 +7,7 @@
             <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">进行中</view>
             <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">动态</view>
         </view>
-        <!--我负责的  -->
+        <!--进行中  -->
         <block wx:if="{{tab_status==0}}">
             <view class='todo_lists'>
                 <view class="todo_cell_warp">
@@ -116,7 +116,7 @@
                 </view>
             </view>
         </block>
-        <!--我发起的  -->
+        <!--动态  -->
         <block wx:if="{{tab_status==1}}">
             <view class="panel_warp">
                 <view class="panel__list">

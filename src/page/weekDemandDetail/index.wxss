@@ -14,16 +14,16 @@
 }
 
 .gallery-wrap>.demand-title {
-    color: #333;
-    font-size: 28rpx;
-    font-weight: 600;
+    font-size: 30rpx;
+     font-weight: bold; 
 }
 
-.gallery-wrap>text {
-    font-size: 26rpx;
-    color: #999;
+.gallery-wrap{
+    font-size: 30rpx;
 }
-
+.item-content>.item-cells{
+        font-size: 30rpx;
+}
 .item-content .success {
     color: rgba(83, 176, 56, 0.87);
 }
