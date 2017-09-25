@@ -1,37 +1,88 @@
 <!--本周需求列表  -->
 <view class='container'>
-        <view class='page-body'>
-                <view class='events-day'>
-                        <view class='header'>今天</view>
-                        <view class="panel_warp">
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        高云海
-                                                        <text>待开发</text>
-                                                        <text style='float:right'>2017-09-25 18:00</text>
-                                                </view>
-                                                <view class="desc">APP审核订单不通过时没有短信提醒</view>
-                                        </view>
-                                </view>
-
-                                  <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        刘军海
-                                                        <text class="assign_due ">已逾期3(天)</text>
-                                                        <text style='float:right'>2017-09-25 18:00</text>
-                                                </view>
-                                                <view class="desc">APP审核订单不通过时没有短信提醒</view>
-                                        </view>
-                                </view>
+    <view class='page-body'>
+        <view class='events-day'>
+            <view class='header'>2017-09-25</view>
+            <view class="panel_warp">
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            APP审核订单不通过时没有短信提醒
                         </view>
+                        <view class="desc">
+                            <text>责任人：高云海</text>
+                            <text>延期：0天</text>
+                            <text class="success">待开发</text>
+                        </view>
+                    </view>
                 </view>
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            小票打印出错
+                        </view>
+                        <view class="desc">
+                            <text>责任人：高云海</text>
+                            <text>延期：3天</text>
+                            <text>待开发</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            企业号任务功能检查和修正
+                        </view>
+                        <view class="desc">
+                            <text>责任人：刘军海</text>
+                            <text>延期：3天</text>
+                            <text>待开发</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='header'>2017-09-28</view>
+            <view class="panel_warp">
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            五云山道闸系统对接
+                        </view>
+                        <view class="desc">
+                            <text>责任人：高云海</text>
+                            <text>延期：4天</text>
+                            <text>待开发</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='header'>2017-09-30</view>
+            <view class="panel_warp">
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            排期执行管理导出活动参与人员信息为空
+                        </view>
+                        <view class="desc">
+                            <text>责任人：高云海</text>
+                            <text>延期：4天</text>
+                            <text class="success">开发完成</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="panel__list">
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            优化房间费用初始化
+                        </view>
+                        <view class="desc">
+                            <text>责任人：高云海</text>
+                            <text>延期：4天</text>
+                            <text>待开发</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
         </view>
+    </view>
 </view>
