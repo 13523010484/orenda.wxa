@@ -1,6 +1,9 @@
 @import "/page/task/index.wxss";
 @import "/page/bugDetail/index.wxss";
 
+.page-body{
+        margin-top: 4rpx;
+}
 .content {
     border-bottom: none;
 }
