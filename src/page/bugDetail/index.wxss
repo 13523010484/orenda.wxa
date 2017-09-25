@@ -20,7 +20,6 @@
 }
 .content {
     padding: 0 30rpx;
-    border-bottom: 1rpx solid #e8e8e8;
     background-color: #fff;
 }
 .editor-style {

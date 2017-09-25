@@ -23,7 +23,7 @@ Page({
         jumpDetail: function (e) {
                 // e.currentTarget.id 仅用来模拟，为了动态显示任务详情页情况
                 wx.navigateTo({
-                        url: '/page/taskDetail/index?id=' + e.currentTarget.id,
+                        url: '/page/weekDemandDetail/index?id=' + e.currentTarget.id,
                         success: function (res) { },
                         fail: function (res) { },
                         complete: function (res) { },

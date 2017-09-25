@@ -1,31 +1,32 @@
 <view class='container'>
-    <view class='page-body'>
-        <view class='header'>
-            <view class='resource-info'>
-                <text>项目：</text>
-                <text>小蜗牛任务追踪系统</text>
-            </view>
-             <view class='todo_cell'>
-                <view class='item-name'>
-                    	企业号任务功能检查和修正
+        <view class='page-body'>
+                <view class='header'>
+                        <view class='resource-info'>
+                                <text>项目：</text>
+                                <text>奥伦达CMS系统</text>
+                        </view>
+                        <view class='todo_cell'>
+                                <view class='item-name'>
+                                        APP审核订单不通过时能收到短信，但是后台查不到短信记录
+                                </view>
+                                <view class='item-content'>
+                                        <view class="item-cells">
+                                                <text>2017-09-28 18:00:00</text>
+                                        </view>
+                                        <view class="item-cells">
+                                                <text class='success'>开发完成</text>
+                                        </view>
+                                </view>
+                        </view>
                 </view>
-                <view class='item-content'>
-                    <view class="item-cells">
-                        <text>执行人：</text>
-                        <text>贾秋花</text>
-                    </view>
-                    <view class="item-cells">
-                        <text>待开发</text>
-                    </view>
-                    <view class="item-cells">
-                        <text>2017-09-28 18:00:00</text>
-                    </view>
+                <view class='content gallery-wrap'>
+                        <text class='demand-title'>初始需求描述：</text>
+                        <text>D0137郝雪婷13601185512 APP审核不通过没有短信提醒</text>
+                        <image mode='widthFix' src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/25/81E4FD0BAA5266B49EBA2277F337172A'></image>
+                        <text>短信记录查询也没有记录</text>
+                        <image mode='widthFix' src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/25/3A55DFBE6A8ABB69A78D07487CE8E024'></image>
+                        <text class='demand-title'>需求描述：</text>
+                        <text>上午客户又操作了一次，能收到短信提醒，但是在后台”短信记录“和”新平台短信记录“功能下都查不到短信记录手机号为13552440500</text>
                 </view>
-            </view>
         </view>
-        <view class='content gallery-wrap'>
-            <text>检查和修正这几个功能，目前是下达任务有异常</text>
-                  <image mode='widthFix' src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/15/565CDE2DBBDC446D7964B69E25AA637D'></image>
-        </view>
-    </view>
 </view>

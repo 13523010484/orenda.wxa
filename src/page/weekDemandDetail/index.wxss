@@ -1,2 +1,25 @@
-@import  "/page/task/index.wxss";
-@import  "/page/bugDetail/index.wxss";
+@import "/page/task/index.wxss";
+@import "/page/bugDetail/index.wxss";
+
+.content {
+        border-bottom: none;
+}
+
+.gallery-wrap {
+        margin-bottom: 40rpx;
+}
+
+.gallery-wrap>.demand-title {
+        color: #333;
+        font-size: 28rpx;
+        font-weight: 600;
+}
+
+.gallery-wrap>text {
+        font-size: 26rpx;
+        color: #999;
+}
+
+.item-content .success {
+        color: rgba(83, 176, 56, 0.87);
+}
