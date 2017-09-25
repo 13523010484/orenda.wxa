@@ -3,13 +3,33 @@
         <view class='page-body'>
                 <view class='events-day'>
                         <view class='header'>今天</view>
-                        <view class='events-day-content'>
-                                <view class='demand-name'>APP审核订单不通过时没有短信提醒
+                        <view class="panel_warp">
+                                <view class="panel__list">
+                                        <view class='panel__list_hd'>
+                                                <image src='/image/icon.png'></image>
+                                        </view>
+                                        <view class="panel__list_bd">
+                                                <view class='title'>
+                                                        高云海
+                                                        <text>待开发</text>
+                                                        <text style='float:right'>2017-09-25 18:00</text>
+                                                </view>
+                                                <view class="desc">APP审核订单不通过时没有短信提醒</view>
+                                        </view>
                                 </view>
-                                <view class='demand-list'>
-                                        <text class='demand-people'>高云海</text>
-                                        <text class='demanf-status'>待开发</text>
-                                        <text class='demand-time'>2017-09-25 18:00</text>
+
+                                  <view class="panel__list">
+                                        <view class='panel__list_hd'>
+                                                <image src='/image/icon.png'></image>
+                                        </view>
+                                        <view class="panel__list_bd">
+                                                <view class='title'>
+                                                        刘军海
+                                                        <text class="assign_due ">已逾期3(天)</text>
+                                                        <text style='float:right'>2017-09-25 18:00</text>
+                                                </view>
+                                                <view class="desc">APP审核订单不通过时没有短信提醒</view>
+                                        </view>
                                 </view>
                         </view>
                 </view>
