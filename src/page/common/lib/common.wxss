@@ -200,3 +200,36 @@ icon {
     word-wrap: break-word;
     width: inherit;
 }
+
+/*loading  */
+
+.loading {
+    text-align: center;
+    height: 100%;
+    margin-top: 50%
+}
+
+.loading .icon {
+    -webkit-animation: twr-spin 2s infinite linear;
+    animation: twr-spin 2s infinite linear;
+    width: 84rpx;
+    height: 84rpx;
+
+}
+.loading .desc{
+    color: #999;
+    font-size: 24rpx
+
+}
+
+@keyframes twr-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}

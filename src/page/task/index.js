@@ -24,6 +24,14 @@ Page({
         //     fail: function (res) { },
         //     complete: function (res) { },
         // })
+        var self = this
+
+        //!!!!假设请求接口结束，2秒后模拟关闭loading
+        setTimeout(function () {
+            self.setData({
+                showloading: true
+            })
+        }, 2000)
 
     },
     /**
