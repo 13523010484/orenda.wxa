@@ -1,5 +1,6 @@
 /* page/bug/index.wxss */
-@import  "/page/task/index.wxss";
-.todo_cell:first-child{
-         border-top: 1rpx solid #e5e5e5;
+@import "/page/task/index.wxss";
+
+.todo_cell:first-child {
+        border-top: 1rpx solid #e5e5e5;
 }

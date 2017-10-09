@@ -2,117 +2,117 @@
 @import "/page/task/index.wxss";
 
 .todo_lists {
-    background-color: transparent;
+        background-color: transparent;
 }
 
 .todo_cell_warp .todo_cell {
-    margin: 15rpx 0;
-    border-top: 1rpx solid #e5e5e5;
+        margin: 15rpx 0;
+        border-top: 1rpx solid #e5e5e5;
 }
 
 .item-precess .item-cell {
-    font-size: 24rpx;
-    color: #999;
+        font-size: 24rpx;
+        color: #999;
 }
 
 .panel_warp {
-    background-color: #fff;
-    position: relative;
-    overflow: hidden;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
 }
 
 .panel_warp:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    border-top: 1px solid #e5e5e5;
-    color: #e5e5e5;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 1px;
+        border-top: 1px solid #e5e5e5;
+        color: #e5e5e5;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
 }
 
 .panel_warp:after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    border-bottom: 1px solid #e5e5e5;
-    color: #e5e5e5;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        border-bottom: 1px solid #e5e5e5;
+        color: #e5e5e5;
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
 }
 
 .panel__list {
-    padding: 30rpx;
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+        padding: 30rpx;
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
 }
 
 .panel__list_hd {
-    margin-right: 0.8em;
-    width: 90rpx;
-    height: 90rpx;
-    line-height: 90rpx;
-    text-align: center;
+        margin-right: 0.8em;
+        width: 90rpx;
+        height: 90rpx;
+        line-height: 90rpx;
+        text-align: center;
 }
 
 .panel__list_hd image {
-    width: 90rpx;
-    height: 90rpx;
-    border-radius: 100%
+        width: 90rpx;
+        height: 90rpx;
+        border-radius: 100%;
 }
 
 .panel__list_bd {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    min-width: 0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        min-width: 0;
 }
 
 .panel__list_bd .title {
-    color: #222;
-    font-size: 28rpx;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+        color: #222;
+        font-size: 28rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
 }
 
 .panel__list_bd .title text, .panel__list_bd .desc {
-    color: #888;
+        color: #888;
 }
 
 .panel__list_bd .desc {
-    font-size: 24rpx;
-    margin-top: 6rpx;
+        font-size: 24rpx;
+        margin-top: 6rpx;
 }
 
 .panel__list:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 1px;
-    border-top: 1px solid #e5e5e5;
-    color: #e5e5e5;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    left: 30rpx;
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 1px;
+        border-top: 1px solid #e5e5e5;
+        color: #e5e5e5;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        left: 30rpx;
 }

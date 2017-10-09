@@ -90,8 +90,8 @@ icon {
     border-width: 4rpx 4rpx 0 0;
     border-color: #c8c8cd;
     border-style: solid;
-    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+     -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0); 
     top: -2px;
     position: absolute;
     top: 50%;

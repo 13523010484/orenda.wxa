@@ -1,31 +1,31 @@
 <view class="container">
-    <view class="page-body">
-        <view class='layout-center'>
-            <view class='head'>
-                <view class='logo'>Orenda</view>
-                <view class='title'>登录</view>
-            </view>
-
-            <view class='body'>
-                <form class='form' action='' method=''>
-                    <view class='box'>
-                        <view class='form-item'>
-                            <view class='form-field'>
-                                <input class='username' type='text' name='text' placeholder='用户名' />
-                            </view>
+        <view class="page-body">
+                <view class='layout-center'>
+                        <view class='head'>
+                                <view class='logo'>Orenda</view>
+                                <view class='title'>登录</view>
                         </view>
-                        <view class='form-item'>
-                            <view class='form-field'>
-                                <input class='password' type='password' name='password' placeholder='密码' />
-                            </view>
-                        </view>
-                    </view>
 
-                    <view class='form-buttons'>
-                        <button type='primary' class='btn' bindtap='go_login'>登录</button>
-                    </view>
-                </form>
-            </view>
+                        <view class='body'>
+                                <form class='form'>
+                                        <view class='box'>
+                                                <view class='form-item'>
+                                                        <view class='form-field'>
+                                                                <input bindinput='bindKeyInput' class='username' type='text' name='text' placeholder='用户名' />
+                                                        </view>
+                                                </view>
+                                                <view class='form-item'>
+                                                        <view class='form-field'>
+                                                                <input bindinput='bindPassword' class='password' type='password' name='password' placeholder='密码' />
+                                                        </view>
+                                                </view>
+                                        </view>
+
+                                        <view class='form-buttons'>
+                                                <button type='primary' class='btn' bindtap='go_login'>登录</button>
+                                        </view>
+                                </form>
+                        </view>
+                </view>
         </view>
-    </view>
 </view>
