@@ -1,63 +1,63 @@
 {
-        "pages": [
-                "page/login/index",
-                "page/task/index",
-                "page/taskDetail/index",
-                "page/task/report",
-                "page/project/index",
-                "page/project/lists",
-                "page/me/index",
-                "page/me/task",
-                "page/bug/index",
-                "page/bugDetail/index",
-                "page/weekDemand/index",
-                "page/weekDemandDetail/index",
-                "page/manage/index"
-        ],
-        "window": {
-                "navigationBarTextStyle": "black",
-                "navigationBarTitleText": "小蜗牛",
-                "navigationBarBackgroundColor": "#ffffff",
-                "backgroundColor": "#fafafa",
-                "enablePullDownRefresh": true
-        },
-        "tabBar": {
-                "color": "#999999",
-                "selectedColor": "#4ea5ad",
-                "borderStyle": "black",
-                "backgroundColor": "#ffffff",
-                "list": [
-                        {
-                                "pagePath": "page/task/index",
-                                "iconPath": "image/task.png",
-                                "selectedIconPath": "image/task_active.png",
-                                "text": "任务"
-                        },
-                        {
-                                "pagePath": "page/project/index",
-                                "iconPath": "image/project.png",
-                                "selectedIconPath": "image/project_active.png",
-                                "text": "项目"
-                        },
-                        {
-                                "pagePath": "page/manage/index",
-                                "iconPath": "image/zhuizong.png",
-                                "selectedIconPath": "image/zhuizong_active.png",
-                                "text": "追踪"
-                        },
-                        {
-                                "pagePath": "page/me/index",
-                                "iconPath": "image/more.png",
-                                "selectedIconPath": "image/more_active.png",
-                                "text": "更多"
-                        }
-                ]
-        },
-        "networkTimeout": {
-                "request": 10000,
-                "connectSocket": 10000,
-                "uploadFile": 10000,
-                "downloadFile": 10000
-        },
-        "debug": false
+    "pages": [
+        "page/task/index",
+        "page/login/index",
+        "page/taskDetail/index",
+        "page/task/report",
+        "page/project/index",
+        "page/project/lists",
+        "page/me/index",
+        "page/me/task",
+        "page/bug/index",
+        "page/bugDetail/index",
+        "page/weekDemand/index",
+        "page/weekDemandDetail/index",
+        "page/manage/index"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "小蜗牛",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#fafafa",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#4ea5ad",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "page/task/index",
+                "iconPath": "image/task.png",
+                "selectedIconPath": "image/task_active.png",
+                "text": "任务"
+            },
+            {
+                "pagePath": "page/project/index",
+                "iconPath": "image/project.png",
+                "selectedIconPath": "image/project_active.png",
+                "text": "项目"
+            },
+            {
+                "pagePath": "page/manage/index",
+                "iconPath": "image/zhuizong.png",
+                "selectedIconPath": "image/zhuizong_active.png",
+                "text": "追踪"
+            },
+            {
+                "pagePath": "page/me/index",
+                "iconPath": "image/more.png",
+                "selectedIconPath": "image/more_active.png",
+                "text": "更多"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
 }
