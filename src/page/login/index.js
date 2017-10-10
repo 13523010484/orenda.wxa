@@ -5,9 +5,21 @@ Page({
     /* 页面初始化数据 */
     data: {
         login_name: '',
-        login_password: ''
+        login_password: '',
+        code: ''
     },
-
+    /**
+     * 生命周期函数--监听页面加载
+    */
+    onLoad: function (options) {
+        var that = this
+        //微信登录获取code
+        app.getWxLogin(function (code) {
+            that.setData({
+                code: code
+            })
+        })
+    },
     bindKeyInput: function (e) {
         this.setData({
             login_name: e.detail.value
@@ -20,8 +32,12 @@ Page({
     },
     /* 用户输入用户名密码登录逻辑*/
     getLogin: function () {
-        var $this = this
-        app.request(loginUrl, { loginName: this.data.login_name, loginPassword: this.data.login_password }, function (res) {
+        var $this = this, paras = {
+            loginName: this.data.login_name,
+            loginPassword: this.data.login_password,
+            code: this.data.code
+        }
+        app.request(loginUrl, paras, function (res) {
             if (res.code == 1) {
                 // 登录成功，跳转到主页面
                 wx.setStorageSync('loginInfo', res.data);
