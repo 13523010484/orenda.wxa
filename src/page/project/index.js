@@ -1,24 +1,27 @@
 var app = getApp()
+const projectUrl = app.api.projectUrl
 Page({
-
-        /**
-         * 页面的初始数据
-         */
         data: {
-
+                data: []
         },
-
-        /**
-         * 生命周期函数--监听页面加载
-         */
+        getData: function () {
+                var $this = this
+                app.request(projectUrl, {}, function (res) {
+                        //接口请求成功时
+                        if (res.code == 1) {
+                                console.log('ok!')
+                                data: projectUrl.data
+                        }
+                })
+        },
         onLoad: function (options) {
-                // 我完全模拟了真是数据，存储在本地文件
-                var tree = app.api.demoTree, root = []
+                this.getData()
+                var tree = app.api.projectUrl.data, root = []
                 tree[0].children.forEach(function (item) {
                         root.push(item)
                 })
                 this.setData({
-                        demoTree: tree,
+                        data: tree,
                         root: root
                 })
         },
