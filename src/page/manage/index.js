@@ -21,6 +21,14 @@ Page({
                         tab_status: e.target.id
                 })
         },
+        getData: function () {
+                app.request(manageUrl, {}, function (res) {
+                        /* 请求成功时 */
+                        if (res.code == 1) {
+
+                        }
+                })
+        },
         // 点击列表跳转到详情
         jumpDetail: function (e) {
                 // e.currentTarget.id 仅用来模拟，为了动态显示任务详情页情况
