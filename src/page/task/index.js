@@ -1,40 +1,65 @@
 var app = getApp();
-Page({
-    /**
-     * 页面的初始数据
-     */
-    data: {
-        tab_status: 0,
-        open1: true,
-        open2: false,
-        open3: true,
-        open4: false
-    },
+const myTaskListUrl = app.api.myTaskListUrl
+const myTaskCanAuditUrl = app.api.myTaskCanAuditUrl
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
+Page({
+    data: {
+        about: 1,
+        taskReqArray: []
+    },
+    /* 我的任务 数据请求 */
+    getList: function () {
+        var $this = this
+        app.request(myTaskListUrl, { about: $this.data.about }, function (res) {
+            /* 请求接口成功时 */
+            if (res.code == 1) {
+                var data = res.data
+                if ($this.data.about == 2) {
+                    $this.taskReqArray = [];
+                    data.A.forEach(function (item, index) {
+                        $this.taskReqArray.push({
+                            ishidden: true
+                        });
+                    })
+                }
+                $this.setData({
+                    data: data,
+                    taskReqArray: $this.taskReqArray
+                })
+            }
+        })
+    },
+    //可审列表 数据请求
+    getAuditList: function (taskId) {
+        var $this = this
+        app.request(myTaskCanAuditUrl, { task_id: taskId }, function (res) {
+            if (res.code == 1) {
+                var auditData = res.data
+                $this.setData({
+                    auditData: auditData
+                })
+            }
+        })
+    },
+    /* 监听页面加载 */
     onLoad: function (options) {
-        this.getUserInfo();
+        this.getUserInfo()
+        // this.getList()
         //未登录跳转
         var self = this, logininfo = wx.getStorageSync('loginInfo')
-
-        if (!(logininfo && logininfo.user_id)) {
+        if (!(logininfo && logininfo.userId)) {
             wx.redirectTo({
                 url: '/page/login/index',
             })
         }
-        //!!!!假设请求接口结束，2秒后模拟关闭loading
+        //假设请求接口结束，1秒后模拟关闭loading
         setTimeout(function () {
             self.setData({
                 showloading: true
             })
-        }, 2000)
-
+        }, 1000)
     },
-    /**
-     * 获取微信公共信息
-    */
+    /* 获取公共信息 */
     getUserInfo() {
         var that = this
         if (app.globalData.haswxLogin === false) {
@@ -66,26 +91,40 @@ Page({
     // 切换类型
     switch_tab: function (e) {
         this.setData({
-            tab_status: e.target.id
+            about: e.target.id
         })
+        this.getList(this)
     },
     // 折叠面板
     change_status: function (e) {
-        this.data[e.currentTarget.id] = !this.data[e.currentTarget.id]
-        this.setData(this.data)
-    },
-    // 获取任务列表数据
-    getlist: function () {
-
-    },
-    // 点击列表跳转到详情
-    jumpDetail: function (e) {
-        // e.currentTarget.id 仅用来模拟，为了动态显示任务详情页情况
-        wx.navigateTo({
-            url: '/page/taskDetail/index?id=' + e.currentTarget.id,
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
+        var that = this
+        this.taskReqArray[e.currentTarget.dataset.taskIndex].ishidden = !this.taskReqArray[e.currentTarget.dataset.taskIndex].ishidden;
+        this.taskReqArray.forEach(function (item, index) {
+            if (index !== e.currentTarget.dataset.taskIndex && item.ishidden == false) {
+                item.ishidden = true;
+            }
+            if (item.ishidden == false) {
+                that.getAuditList(e.currentTarget.dataset.taskId)
+            }
         })
+        that.setData({
+            taskReqArray: this.taskReqArray
+        });
+    },
+    // 我负责的 任务详情
+    jumpDetail: function (e) {
+        wx.navigateTo({
+            url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId,
+        })
+    },
+    // 我发起的 任务详情
+    jumpAduitDetail: function (e) {
+        console.log(e.currentTarget.dataset.taskWorkProgressId)
+        wx.navigateTo({
+            url: '/page/myTaskAuditDetail/index?taskworkprogressid=' + e.currentTarget.dataset.taskWorkProgressId,
+        })
+    },
+    onShow: function() {
+        this.getList()
     }
 })

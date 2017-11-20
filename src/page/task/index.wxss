@@ -1,19 +1,102 @@
 /* 任务样式  */
 
 .page-body {
-        margin-bottom: 40rpx;
+    margin-bottom: 40rpx;
 }
 
 .item-cells {
-        display: inline-block;
-        margin-right: 15rpx;
+    display: inline-block;
+    margin-right: 15rpx;
 }
 
 .item-cells image {
-        width: 24rpx;
-        height: 24rpx;
-        border-radius: 24rpx;
-        vertical-align: middle;
-        margin-right: 4rpx;
-        margin-top: -2rpx;
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 24rpx;
+    vertical-align: middle;
+    margin-right: 4rpx;
+    margin-top: -2rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.img-empty {
+    width: 240rpx;
+    height: 240rpx;
+}
+
+.img-empty-wrap {
+    padding-top: 120rpx;
+    text-align: center;
+}
+
+.no-task-notice {
+    font-size: 36rpx;
+}
+
+.no-task-praise {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.executor-name, .report-num {
+    font-size: 24rpx;
+    color: #999;
+    margin-left: 8rpx;
+}
+
+.report-num {
+    margin-left: 24rpx;
+    margin-right: 100rpx;
+}
+
+.line-clamp-1 {
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.success {
+    color: rgba(83, 176, 56, 0.87);
+}
+
+.todo_lists .todo_cell_warp .todo_cell .icon {
+    text-align: right;
+    color: #999;
+    position: relative;
+}
+
+.todo_lists .todo_cell_warp .todo_cell .icon::after {
+    content: " ";
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -40rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -70rpx;
+    right: 4rpx;
+}
+
+.todo_lists .todo_cell_warp .todo_cell .icon.icon_active::after {
+    border-width: 0 4rpx 4rpx 0;
+}
+
+.border_top {
+    border-top: 1rpx solid #e5e5e5;
 }

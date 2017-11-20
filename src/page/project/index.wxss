@@ -1,36 +1,36 @@
 /* 项目列表样式  */
 
 .projects {
-        margin-bottom: 40rpx;
+    margin-bottom: 40rpx;
 }
 
 .project {
-        font-size: 28rpx;
-        color: #222;
-        border-bottom: 1rpx solid #e5e5e5;
-        background-color: #fff;
-        padding: 18rpx 30rpx;
+    font-size: 28rpx;
+    color: #222;
+    border-bottom: 1rpx solid #e5e5e5;
+    background-color: #fff;
+    padding: 18rpx 30rpx;
 }
 
 .project:active {
-        background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .project:first-child {
-        border-top: 1rpx solid #e5e5e5;
+    border-top: 1rpx solid #e5e5e5;
 }
 
 .project-name {
-        line-height: 64rpx;
-        color: #222;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    line-height: 64rpx;
+    color: #222;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .project image {
-        margin-right: 20rpx;
-        width: 64rpx;
-        height: 64rpx;
-        vertical-align: middle;
+    margin-right: 20rpx;
+    width: 64rpx;
+    height: 64rpx;
+    vertical-align: middle;
 }

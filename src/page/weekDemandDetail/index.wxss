@@ -2,31 +2,43 @@
 @import "/page/bugDetail/index.wxss";
 
 .page-body {
-        margin-top: 4rpx;
+    margin-top: 4rpx;
 }
 
 .content {
-        border-bottom: none;
+    border-bottom: none;
 }
 
 .gallery-wrap {
-        padding-bottom: 40rpx;
-        margin-bottom: 30rpx;
+    padding-bottom: 40rpx;
+    margin-bottom: 30rpx;
 }
 
 .gallery-wrap>.demand-title {
-        font-size: 30rpx;
-        font-weight: bold;
+    font-size: 30rpx;
+    font-weight: bold;
 }
 
 .gallery-wrap {
-        font-size: 30rpx;
+    font-size: 30rpx;
 }
 
 .item-content>.item-cells {
-        font-size: 30rpx;
+    font-size: 30rpx;
 }
 
 .item-content .success {
-        color: rgba(83, 176, 56, 0.87);
+    color: rgba(83, 176, 56, 0.87);
+}
+
+.null-0::after, .null-1::after {
+    display: block;
+}
+
+.null-0::after {
+    content: '初始化需求描述未填写';
+}
+
+.null-1::after {
+    content: '需求描述未填写';
 }

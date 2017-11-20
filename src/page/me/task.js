@@ -1,23 +1,30 @@
-var app = getApp()
-Page({
+var app = getApp();
+const myTaskListUrl = app.api.myTaskListUrl
 
-    /**
-     * 页面的初始数据
-     */
+Page({
     data: {
         open1: true,
         open2: false
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
+    /* 数据请求 */
+    getList: function () {
+        var $this = this
+        app.request(myTaskListUrl, { about: 1 }, function (res) {
+            /* 请求接口成功时 */
+            if (res.code == 1) {
+                var data = res.data
+                $this.setData({
+                    data: data
+                })
+            }
+        })
+    },
+    /* 监听页面加载 */
     onLoad: function (options) {
+        this.getList()
         this.getUserInfo()
     },
-    /**
-     * 获取微信公共信息
-    */
+    /* 获取微信公共信息 */
     getUserInfo() {
         var that = this
         if (app.globalData.haswxLogin === false) {
@@ -53,12 +60,9 @@ Page({
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
-        // e.currentTarget.id 仅用来模拟，为了动态显示任务详情页情况
+        console.log(e.currentTarget.dataset.taskId)
         wx.navigateTo({
-            url: '/page/taskDetail/index?id=' + e.currentTarget.id,
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
+            url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId
         })
     }
 })

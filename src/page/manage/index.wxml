@@ -1,182 +1,141 @@
 <!--page/manage/index.wxml 追踪-->
 <!--任务-->
 <view class="container">
-        <view class="page-body">
-                <!-- tab切换 -->
-                <view class='tab_warp'>
-                        <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">进行中</view>
-                        <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">动态</view>
-                </view>
-                <!--进行中  -->
-                <block wx:if="{{tab_status==0}}">
-                        <view class='todo_lists'>
-                                <view class="todo_cell_warp">
-                                        <view class='todo_cell' id="1" bindtap='jumpDetail'>
-                                                <view class='item-name'> IT集成化方案研究，以淘宝、携程为案例研究，形成研究报告</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>刘军海</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-03-01 19:23:38 ~ 2017-10-31</text>
-                                                        </view>
-                                                </view>
-                                                <view class='item-precess'>
-                                                        <view class="item-cell">
-                                                                <text>汇报进度</text>
-                                                                <view>
-                                                                        <progress percent="0" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>工作进度</text>
-                                                                <view>
-                                                                        <progress percent="10" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>时间进度</text>
-                                                                <view>
-                                                                        <progress percent="85.1" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' id="1" bindtap='jumpDetail'>
-                                                <view class='item-name'> 卡权益数量错误</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>王克进</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-09-23 08:30:00 ~ 2017-09-25</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <text>已延期</text>
-                                                        </view>
-                                                </view>
-                                                <view class='item-precess'>
-                                                        <view class="item-cell">
-                                                                <text>汇报进度</text>
-                                                                <view>
-                                                                        <progress percent="10" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>工作进度</text>
-                                                                <view>
-                                                                        <progress percent="88" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>时间进度</text>
-                                                                <view>
-                                                                        <progress percent="103" color="#f66239" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' id="1" bindtap='jumpDetail'>
-                                                <view class='item-name'> 参与和配合HR系统项目实施工作（一期）</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>刘建利</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-06-02 08:30:00 ~ 2017-10-01</text>
-                                                        </view>
-                                                </view>
-                                                <view class='item-precess'>
-                                                        <view class="item-cell">
-                                                                <text>汇报进度</text>
-                                                                <view>
-                                                                        <progress percent="99" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>工作进度</text>
-                                                                <view>
-                                                                        <progress percent="99" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                        <view class="item-cell">
-                                                                <text>时间进度</text>
-                                                                <view>
-                                                                        <progress percent="94.7" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
-                                                                </view>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                </block>
-                <!--动态  -->
-                <block wx:if="{{tab_status==1}}">
-                        <view class="panel_warp">
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        贾秋花
-                                                        <text>登录了</text> 3次</view>
-                                                <view class="desc">2017-09-25 12:22:57</view>
-                                        </view>
-                                </view>
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        樊海斌
-                                                        <text>登录了</text> 2次</view>
-                                                <view class="desc">2017-09-25 11:00:12</view>
-                                        </view>
-                                </view>
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        高云海
-                                                        <text>登录了</text> 1次</view>
-                                                <view class="desc">2017-09-25 08:34:27</view>
-                                        </view>
-                                </view>
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        超级管理员
-                                                        <text>登录了</text> 1次</view>
-                                                <view class="desc">2017-09-25 08:58:41</view>
-                                        </view>
-                                </view>
-                                <view class="panel__list">
-                                        <view class='panel__list_hd'>
-                                                <image src='/image/icon.png'></image>
-                                        </view>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        张静杰
-                                                        <text>登录了</text> 1次</view>
-                                                <view class="desc">2017-09-25 09:35:40</view>
-                                        </view>
-                                </view>
-                        </view>
-
-                </block>
-
+    <view class="page-body">
+        <!-- tab切换 -->
+        <view class='tab_warp'>
+            <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">进行中</view>
+            <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">动态</view>
         </view>
+        <!--进行中  -->
+        <block wx:if="{{tab_status==0}}">
+            <view class='todo_lists'>
+                <view class="todo_cell_warp">
+                    <view wx:for="{{arrP}}" wx:key="{{item.id}}">
+                        <view class='todo_cell' data-task-id='{{item.task_id}}' bindtap='jumpDetail'>
+                            <view class='item-name'>{{item.NAME}}</view>
+                            <view class='item-content'>
+                                <view class="item-cells">
+                                    <image src='/image/task_user.png'></image>
+                                    <text>{{item.executor_name}}</text>
+                                </view>
+                                <view class="item-cells">
+                                    <image src='/image/task_time.png'></image>
+                                    <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
+                                </view>
+                            </view>
+                            <view class='item-precess'>
+                                <view class="item-cell">
+                                    <text>汇报进度</text>
+                                    <view>
+                                        <progress percent="{{item.work_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                    </view>
+                                </view>
+                                <view class="item-cell">
+                                    <text>工作进度</text>
+                                    <view>
+                                        <progress percent="{{item.work_report_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                    </view>
+                                </view>
+                                <view class="item-cell">
+                                    <text>时间进度</text>
+                                    <view>
+                                        <progress percent="{{item.time_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+
+                    <!-- <view class='todo_cell' id="1" bindtap='jumpDetail'>
+                        <view class='item-name'> 卡权益数量错误</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>王克进</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-23 08:30:00 ~ 2017-09-25</text>
+                            </view>
+                            <view class="item-cells">
+                                <text>已延期</text>
+                            </view>
+                        </view>
+                        <view class='item-precess'>
+                            <view class="item-cell">
+                                <text>汇报进度</text>
+                                <view>
+                                    <progress percent="10" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                            <view class="item-cell">
+                                <text>工作进度</text>
+                                <view>
+                                    <progress percent="88" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                            <view class="item-cell">
+                                <text>时间进度</text>
+                                <view>
+                                    <progress percent="103" color="#f66239" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' id="1" bindtap='jumpDetail'>
+                        <view class='item-name'> 参与和配合HR系统项目实施工作（一期）</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘建利</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-06-02 08:30:00 ~ 2017-10-01</text>
+                            </view>
+                        </view>
+                        <view class='item-precess'>
+                            <view class="item-cell">
+                                <text>汇报进度</text>
+                                <view>
+                                    <progress percent="99" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                            <view class="item-cell">
+                                <text>工作进度</text>
+                                <view>
+                                    <progress percent="99" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                            <view class="item-cell">
+                                <text>时间进度</text>
+                                <view>
+                                    <progress percent="94.7" color="rgba(83, 176, 56, 0.87)" stroke-width="4" show-info/>
+                                </view>
+                            </view>
+                        </view>
+                    </view> -->
+                </view>
+            </view>
+        </block>
+        <!--动态  -->
+        <block wx:if="{{tab_status==1}}">
+            <view class="panel_warp" wx:for='{{arr}}' wx:key='{{item.id}}' id='{{item.id}}'>
+                <view class="panel__list">
+                    <view class='panel__list_hd'>
+                        <image src='/image/icon.png'></image>
+                    </view>
+                    <view class="panel__list_bd">
+                        <view class='title'>
+                            {{item.user_name}}
+                            <text>登录了</text>{{item.login_times}}次</view>
+                        <view class="desc">{{item.last_active_time}}</view>
+                    </view>
+                </view>
+            </view>
+
+        </block>
+
+    </view>
 </view>

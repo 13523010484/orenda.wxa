@@ -90,8 +90,8 @@ icon {
     border-width: 4rpx 4rpx 0 0;
     border-color: #c8c8cd;
     border-style: solid;
-     -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0); 
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     top: -2px;
     position: absolute;
     top: 50%;
@@ -206,7 +206,7 @@ icon {
 .loading {
     text-align: center;
     height: 100%;
-    margin-top: 50%
+    margin-top: 50%;
 }
 
 .loading .icon {
@@ -214,12 +214,11 @@ icon {
     animation: twr-spin 2s infinite linear;
     width: 84rpx;
     height: 84rpx;
-
 }
-.loading .desc{
-    color: #999;
-    font-size: 24rpx
 
+.loading .desc {
+    color: #999;
+    font-size: 24rpx;
 }
 
 @keyframes twr-spin {

@@ -3,24 +3,24 @@
 @import "/page/manage/index.wxss";
 
 .header {
-        margin: 40rpx auto 30rpx;
-        width: 200rpx;
-        color: #5bc4c7;
-        line-height: 50rpx;
-        font-size: 28rpx;
-        text-align: center;
-        border-radius: 8rpx;
-        background-color: rgba(174, 212, 208, 0.3);
+    margin: 40rpx auto 30rpx;
+    width: 200rpx;
+    color: #5bc4c7;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    background-color: rgba(174, 212, 208, 0.3);
 }
 
 .panel__list:active {
-        background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .panel__list .desc text {
-        margin-right: 15rpx;
+    margin-right: 15rpx;
 }
 
 .panel__list .desc text.success {
-        color: rgba(83, 176, 56, 0.87);
+    color: rgba(83, 176, 56, 0.87);
 }

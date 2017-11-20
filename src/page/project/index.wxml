@@ -1,12 +1,12 @@
 <!--项目-->
 <view class="container">
-        <view class="page-body">
-                <!--项目列表  -->
-                <view class='projects'>
-                        <view class='project' bindtap='jumpDetail' id="{{item.id}}" wx:for="{{root}}" wx:key="{{item.id}}}">
-                                <image src="/image/projects.png"></image>
-                                <text class='project-name'>{{item.text}}</text>
-                        </view>
-                </view>
+    <view class="page-body">
+        <!--项目列表  -->
+        <view class='projects'>
+            <view class='project' bindtap='jumpDetail' data-project-id='{{item.projectId}}' wx:for="{{root}}" wx:key="{{item.id}}}">
+                <image src="/image/projects.png"></image>
+                <text class='project-name'>{{item.text}}</text>
+            </view>
         </view>
+    </view>
 </view>

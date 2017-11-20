@@ -1,49 +1,49 @@
 <!--更多-->
 <view class="container">
-        <view class="page-body">
+    <view class="page-body">
 
-                <!--获取用户微信头像  -->
-                <view class='header'>
-                        <view class='user-avatar'>
-                                <image src='{{userInfo.avatarUrl}}' wx:if="{{userInfo.avatarUrl}}"></image>
-                                <image src='/image/icon.png' wx:if="{{userInfo && !userInfo.avatarUrl}}"></image>
-                        </view>
-                        <view class='user-name'>{{userInfo.nickName}}</view>
-                </view>
-
-                <!--我的任务  -->
-                <view class='todo_lists'>
-                        <navigator class="lists_hd no_lists_hd" hover-class='none' url="task">
-                                <view class='lists_hd__desc'>
-                                        <image src='/image/me-task.png'></image> 我的任务
-                                </view>
-                                <text class='icon'></text>
-                        </navigator>
-
-                        <view bindtap='jumpDetail' class="lists_hd no_lists_hd" hover-class='none' url="task">
-                                <view class='lists_hd__desc'>
-                                        <image src='/image/week-demand.png'></image> 本周需求
-                                </view>
-                                <text class='icon'></text>
-                        </view>
-
-                        <navigator class="lists_hd no_lists_hd" hover-class='none' class="lists_hd" url="/page/bug/index">
-                                <view class='lists_hd__desc'>
-                                        <image src='/image/me-bug.png'></image> Bug列表
-                                </view>
-
-                                <text class='icon'></text>
-                        </navigator>
-                </view>
-
-                <!--退出登录  -->
-                <view class='todo_lists'>
-                        <view bindtap='signOut' class="lists_hd ">
-                                <view class='lists_hd__desc'>
-                                        <image src='/image/me-logout.png'></image> 退出登录
-                                </view>
-                                <text class='icon'></text>
-                        </view>
-                </view>
+        <!--获取用户微信头像  -->
+        <view class='header'>
+            <view class='user-avatar'>
+                <image src='{{userInfo.avatarUrl}}' wx:if="{{userInfo.avatarUrl}}"></image>
+                <image src='/image/icon.png' wx:if="{{userInfo && !userInfo.avatarUrl}}"></image>
+            </view>
+            <view class='user-name'>{{userInfo.nickName}}</view>
         </view>
+
+        <!--我的任务  -->
+        <view class='todo_lists'>
+            <navigator class="lists_hd no_lists_hd" hover-class='none' url="task">
+                <view class='lists_hd__desc'>
+                    <image src='/image/me-task.png'></image> 我的任务
+                </view>
+                <text class='icon'></text>
+            </navigator>
+
+            <view bindtap='jumpDetail' class="lists_hd no_lists_hd" hover-class='none' url="task">
+                <view class='lists_hd__desc'>
+                    <image src='/image/week-demand.png'></image> 本周需求
+                </view>
+                <text class='icon'></text>
+            </view>
+
+            <navigator class="lists_hd no_lists_hd" hover-class='none' class="lists_hd" url="/page/bug/index">
+                <view class='lists_hd__desc'>
+                    <image src='/image/me-bug.png'></image> Bug列表
+                </view>
+
+                <text class='icon'></text>
+            </navigator>
+        </view>
+
+        <!--退出登录  -->
+        <view class='todo_lists'>
+            <view bindtap='signOut' class="lists_hd ">
+                <view class='lists_hd__desc'>
+                    <image src='/image/me-logout.png'></image> 退出登录
+                </view>
+                <text class='icon'></text>
+            </view>
+        </view>
+    </view>
 </view>

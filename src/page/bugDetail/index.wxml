@@ -1,28 +1,25 @@
 <view class='container'>
-        <view class='page-body'>
-                <view class='header'>
-                        <view class='resource-info'>
-                                <text>项目：</text>
-                                <text>郑奥服务号</text>
-                        </view>
-                        <view class='todo_cell'>
-                                <view class='item-name'>
-                                        物业电子巡更系统出错
-                                </view>
-                                <view class='item-content'>
-                                        <view class="item-cells">
-                                                <text>执行人：</text>
-                                                <text>贾秋花</text>
-                                        </view>
-                                        <view class="item-cells">
-                                                <text>已解决</text>
-                                        </view>
-                                </view>
-                        </view>
+    <view class='page-body'>
+        <view class='header'>
+            <view class='resource-info'>
+                <text>项目：</text>
+                <text>{{data.project_name}}</text>
+            </view>
+            <view class='todo_cell'>
+                <view class='item-name'>{{data.title}} </view>
+                <view class='item-content'>
+                    <view class="item-cells">
+                        <text>执行人：</text>
+                        <text>{{data.appointed_person_name}}</text>
+                    </view>
+                    <view class="item-cells">
+                        <text>{{data.status_name}}</text>
+                    </view>
                 </view>
-                <view class='content gallery-wrap'>
-                        <text class='content-title'>服务号预订库存控制出错</text>
-                        <image mode='widthFix' src='https://info.orenda.com.cn/snail/ue.action?path=/ue/2017/9/7/DBDAF62FB09D95641FD96A1B829D52A4'></image>
-                </view>
+            </view>
         </view>
+        <view class='content gallery-wrap'>
+            <rich-text nodes="{{data.dsc_rich_text_name}}"></rich-text>
+        </view>
+    </view>
 </view>

@@ -1,88 +1,45 @@
 <!--本周需求列表  -->
 <view class='container'>
-        <view class='page-body'>
-                <view class='events-day'>
-                        <view class='header'>2017-09-25</view>
-                        <view class="panel_warp">
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        APP审核订单不通过时没有短信提醒
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：高云海</text>
-                                                        <text>延期：0天</text>
-                                                        <text class="success">开发完成</text>
-                                                </view>
-                                        </view>
-                                </view>
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        小票打印出错
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：高云海</text>
-                                                        <text>延期：3天</text>
-                                                        <text>待开发</text>
-                                                </view>
-                                        </view>
-                                </view>
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        企业号任务功能检查和修正
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：刘军海</text>
-                                                        <text>延期：3天</text>
-                                                        <text>待开发</text>
-                                                </view>
-                                        </view>
-                                </view>
+    <view class='page-body'>
+        <view class='events-day'>
+            <block wx:for="{{arr}}" wx:for-index="idx" wx:for-item="itemName">
+                <view class='header'>{{idx}}</view>
+                <view class="panel_warp">
+                    <view class="panel__list" data-requirement-id="{{item.requirement_id}}" wx:for="{{itemName}}" bindtap='jumpDetail'>
+                        <view class="panel__list_bd">
+                            <view class='title'>
+                                {{item.name}}
+                            </view>
+                            <view class="desc">
+                                <text>责任人：{{item.responsible_user_name}}</text>
+                                <text>延期：{{item.expired_days}}天</text>
+                                <text class="{{item.status == 64?'success':''}}">{{item.status_name}}</text>
+                            </view>
                         </view>
-                        <view class='header'>2017-09-28</view>
-                        <view class="panel_warp">
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        五云山道闸系统对接
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：高云海</text>
-                                                        <text>延期：4天</text>
-                                                        <text>待开发</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                        <view class='header'>2017-09-30</view>
-                        <view class="panel_warp">
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        排期执行管理导出活动参与人员信息为空
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：高云海</text>
-                                                        <text>延期：4天</text>
-                                                        <text class="success">开发完成</text>
-                                                </view>
-                                        </view>
-                                </view>
-                                <view class="panel__list" bindtap='jumpDetail'>
-                                        <view class="panel__list_bd">
-                                                <view class='title'>
-                                                        优化房间费用初始化
-                                                </view>
-                                                <view class="desc">
-                                                        <text>责任人：高云海</text>
-                                                        <text>延期：4天</text>
-                                                        <text>待开发</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
+                    </view>
                 </view>
+            </block>
         </view>
+    </view>
 </view>
+
+<!--本周需求列表  -->
+<!-- <view class='container'>
+    <view class='page-body'>
+        <view class='events-day'>
+            <view class='header'>2017/10/10</view>
+            <view class="panel_warp">
+                <view class="panel__list" bindtap='jumpDetail'>
+                    <view class="panel__list_bd">
+                        <view class='title'>小蜗牛</view>
+                        <view class="desc">
+                            <text>责任人：贾秋花</text>
+                            <text>延期：10天</text>
+                            <text class="{{item.status == 64?'success':''}}">开发已完成</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>  -->

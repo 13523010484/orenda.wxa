@@ -1,275 +1,359 @@
 <!--任务-->
 <import src="../common/loading.wxml" />
 <view class="container">
-        <template is="loading" data="{{showloading: showloading}}" />
-        <view class="page-body" hidden="{{!showloading}}">
-                <!-- tab切换 -->
-                <view class='tab_warp'>
-                        <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">我负责的</view>
-                        <view class="tab {{tab_status==1?'active':''}}" id='1' bindtap="switch_tab">我发起的</view>
-                </view>
-                <!--我负责的  -->
-                <block wx:if="{{tab_status==0}}">
-                        <view class='todo_lists'>
-                                <view bindtap='change_status' class="lists_hd" id="open1">
-                                        <text class='lists_hd__desc'>待完成</text>
-                                        <text class="icon {{open1?'icon_active':''}}"></text>
-                                </view>
-                                <view class="todo_cell_warp" hidden='{{!open1}}'>
-                                        <view class='todo_cell' id="1" bindtap='jumpDetail'>
-                                                <view class='item-name'> 数据挖掘模型实施</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <!--测试头像地址，请获取微信头像  -->
-                                                                <image src='{{userInfo.avatarUrl}}'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-09-22</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>奥伦达CMS系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="1">
-                                                <view class='item-name'>
-                                                        物业电子巡更系统操作手册编写
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='{{userInfo.avatarUrl}}'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-09-20</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>物业电子巡更系统</text>
-                                                        </view>
-
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="1">
-                                                <view class='item-name'>
-                                                        梳理巡更系统函数和存储过程
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='{{userInfo.avatarUrl}}'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text class="assign_due ">2016-08-23 已逾期</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>物业电子巡更系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                        <view class='todo_lists'>
-                                <view bindtap='change_status' class="lists_hd " id="open2">
-                                        <text class='lists_hd__desc'>已完成</text>
-                                        <text class="icon {{open2?'icon_active':''}}"></text>
-                                </view>
-                                <view class="todo_cell_warp " hidden='{{!open2}}'>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'> 熟悉会员CMS管理系统与物业管理系统，达到能接手处理相关问题。</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='{{userInfo.avatarUrl}}'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-03-22</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>计划性任务</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'>
-                                                        每周学习内容汇总制作ppt并上传至小蜗牛
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2016-09-23</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>小蜗牛任务追踪系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'>
-                                                        物业系统的软件著作权、商标权申请登记
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2016-08-23</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>物业电子巡更系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'>
-                                                        物业系统的软件著作权、商标权申请登记
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>贾秋花</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2016-08-23</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>物业电子巡更系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                </block>
-                <!--我发起的  -->
-                <block wx:if="{{tab_status==1}}">
-                        <view class='todo_lists'>
-                                <view bindtap='change_status' class="lists_hd " id="open3">
-                                        <text class='lists_hd__desc'>待审核</text>
-                                        <text class="icon {{open3?'icon_active':''}}"></text>
-                                </view>
-                                <view class="todo_cell_warp " hidden='{{!open3}}'>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="3">
-                                                <view class='item-name'> 明源移动案场项目</view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>刘建利</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-06-21</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>明源移动案场项目</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="3">
-                                                <view class='item-name'>
-                                                        IT集成化方案研究，以淘宝、携程为案例研究，形成研究报告
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>刘军海</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-03-01</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>计划性任务</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="3">
-                                                <view class='item-name'>
-                                                        学习CMS系统运维
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>申振杰</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-09-05</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>奥伦达CMS系统</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="3">
-                                                <view class='item-name'>
-                                                        ldap统一账户体系研究
-                                                </view>
-                                                <view class='item-content'>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_user.png'></image>
-                                                                <text>刘军海</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_time.png'></image>
-                                                                <text>2017-04-07</text>
-                                                        </view>
-                                                        <view class="item-cells">
-                                                                <image src='/image/task_project.png'></image>
-                                                                <text>计划性任务</text>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                        <!--已完成列表  -->
-                        <view class='todo_lists'>
-                                <view bindtap='change_status' class="lists_hd" id="open4">
-                                        <text class='lists_hd__desc'>已完成</text>
-                                        <text class="icon {{open4?'icon_active':''}}"></text>
-                                </view>
-                                <view class="todo_cell_warp" hidden='{{!open4}}'>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'> 思考下乡计划</view>
-                                                <view class='item-content'>
-                                                        <text>申振杰</text>
-                                                        <text>2017-09-24 </text>
-                                                        <text>计划性任务</text>
-                                                </view>
-                                        </view>
-                                        <view class='todo_cell' bindtap='jumpDetail' id="2">
-                                                <view class='item-name'>
-                                                        梳理巡更系统函数和存储过程
-                                                </view>
-                                                <view class='item-content'>
-                                                        <text>申振杰</text>
-                                                        <text>2017-08-10</text>
-                                                        <text>物业电子巡更系统</text>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                </block>
-
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page-body" hidden="{{!showloading}}">
+        <!-- tab切换 -->
+        <view class='tab_warp'>
+            <view class="tab {{about==1?'active':''}}" id='1' bindtap="switch_tab">我负责的</view>
+            <view class="tab {{about==2?'active':''}}" id='2' bindtap="switch_tab">我发起的</view>
         </view>
+        <!--我负责的  -->
+        <block wx:if="{{about==1}}">
+            <view class='todo_lists'>
+                <view class="todo_cell_warp">
+                    <view class='todo_cell' data-task-id='{{item.task_id}}' wx:for="{{data.P}}" wx:key="{{item.id}}" bindtap='jumpDetail'>
+                        <view class='item-name'> {{item.NAME}}</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <!--测试头像地址，请获取微信头像  -->
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>{{item.executor_name}}</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>{{item.ask_end_date}}</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>{{item.project_name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 请求成功且数据为空时，默认图文提醒 -->
+                     <view wx:if="{{data.A.length == 0}}">
+                        <image src='../../image/mytask_img-empty-todo.png'></image>
+                        <view>没有正在进行的任务</view>
+                        <view>工作全部完成了，太棒了！</view>
+                    </view> 
+                     <!-- <view class='hide{{data.A.length == 0 ? "show" : ""}}'>
+                        <image src='../../image/mytask_img-empty-todo.png'></image>
+                        <view>没有正在进行的任务</view>
+                        <view>工作全部完成了，太棒了！</view>
+                    </view>  -->
+                </view>
+            </view>
+        </block>
+        <!--我发起的  -->
+        <block wx:if="{{about==2}}">
+            <view class='todo_lists border_top' wx:for-index="index" wx:for="{{data.A}}" wx:key="{{item.id}}">
+                <view class="todo_cell_warp" bindtap='change_status' data-task-id='{{item.task_id}}' data-task-index='{{index}}'>
+                    <view class='todo_cell'>
+                        <view class='item-name'>{{item.NAME}}</view>
+                        <view class='item-content'>
+                            <text>执行人：{{item.executor_name}}</text>
+                            <text style='margin-left:20rpx;'>结束时间：{{item.ask_end_date}}</text>
+                        </view>
+                        <view class='item-content'>
+                            可审任务：
+                            <text class='assign_due'>{{item.report_num}}</text>个
+                            <text style='margin-left:20rpx;'>工作进度：{{item.work_progress}}</text>
+                        </view>
+                        <view class="icon {{taskReqArray[index].ishidden==true?'':'icon_active'}}"></view>
+                    </view>
+                </view>
+                <view class="todo_cell_warp" hidden='{{taskReqArray[index].ishidden}}'>
+                    <view class='todo_cell' wx:for="{{auditData}}" data-task-work-progress-id="{{item.task_work_progress_id}}" bindtap='jumpAduitDetail'>
+                        <view class='item-name'>
+                            <view class='line-clamp-1'>
+                                <text class='assign_due'>({{item.audit_status_name}}) </text>{{item.name}}： {{item.report_content}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
 </view>
+
+<!--我的任务改动之前  -->
+<!--任务-->
+<!-- <import src="../common/loading.wxml" /> -->
+<!-- <view class="container">
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page-body" hidden="{{!showloading}}">
+        <view class='tab_warp'>
+            <view class="tab {{about==1?'active':''}}" id='1' bindtap="switch_tab">我负责的</view>
+            <view class="tab {{about==2?'active':''}}" id='2' bindtap="switch_tab">我发起的</view>
+        </view>
+
+
+        <block wx:if="{{about==1}}">
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd" id="open1">
+                    <text class='lists_hd__desc'>待完成</text>
+                    <text class="icon {{open1?'icon_active':''}}"></text>
+                </view>
+                <view class="todo_cell_warp" hidden='{{!open1}}'>
+                    <view class='todo_cell' id="1" bindtap='jumpDetail'>
+                        <view class='item-name'> 数据挖掘模型实施</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-22</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>奥伦达CMS系统</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="1">
+                        <view class='item-name'>
+                            物业电子巡更系统操作手册编写
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-20</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
+
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="1">
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text class="assign_due ">2016-08-23 已逾期</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd " id="open2">
+                    <text class='lists_hd__desc'>已完成</text>
+                    <text class="icon {{open2?'icon_active':''}}"></text>
+                </view>
+                <view class="todo_cell_warp " hidden='{{!open2}}'>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'> 熟悉会员CMS管理系统与物业管理系统，达到能接手处理相关问题。</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-03-22</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'>
+                            每周学习内容汇总制作ppt并上传至小蜗牛
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-09-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>小蜗牛任务追踪系统</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'>
+                            物业系统的软件著作权、商标权申请登记
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-08-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'>
+                            物业系统的软件著作权、商标权申请登记
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>贾秋花</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2016-08-23</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>物业电子巡更系统</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+
+
+
+        <block wx:if="{{about==2}}">
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd " id="open3">
+                    <text class='lists_hd__desc'>待审核</text>
+                    <text class="icon {{open3?'icon_active':''}}"></text>
+                </view>
+                <view class="todo_cell_warp " hidden='{{!open3}}'>
+                    <view class='todo_cell' bindtap='jumpDetail' id="3">
+                        <view class='item-name'> 明源移动案场项目</view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘建利</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-06-21</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>明源移动案场项目</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="3">
+                        <view class='item-name'>
+                            IT集成化方案研究，以淘宝、携程为案例研究，形成研究报告
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘军海</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-03-01</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="3">
+                        <view class='item-name'>
+                            学习CMS系统运维
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>申振杰</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-09-05</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>奥伦达CMS系统</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="3">
+                        <view class='item-name'>
+                            ldap统一账户体系研究
+                        </view>
+                        <view class='item-content'>
+                            <view class="item-cells">
+                                <image src='/image/task_user.png'></image>
+                                <text>刘军海</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_time.png'></image>
+                                <text>2017-04-07</text>
+                            </view>
+                            <view class="item-cells">
+                                <image src='/image/task_project.png'></image>
+                                <text>计划性任务</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+
+
+            <view class='todo_lists'>
+                <view bindtap='change_status' class="lists_hd" id="open4">
+                    <text class='lists_hd__desc'>已完成</text>
+                    <text class="icon {{open4?'icon_active':''}}"></text>
+                </view>
+                <view class="todo_cell_warp" hidden='{{!open4}}'>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'> 思考下乡计划</view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2017-09-24 </text>
+                            <text>计划性任务</text>
+                        </view>
+                    </view>
+                    <view class='todo_cell' bindtap='jumpDetail' id="2">
+                        <view class='item-name'>
+                            梳理巡更系统函数和存储过程
+                        </view>
+                        <view class='item-content'>
+                            <text>申振杰</text>
+                            <text>2017-08-10</text>
+                            <text>物业电子巡更系统</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+
+
+
+        </block>
+    </view>
+</view> -->
