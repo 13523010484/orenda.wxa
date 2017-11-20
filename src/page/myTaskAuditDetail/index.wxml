@@ -1,0 +1,50 @@
+<!--page/taskDetail/index.wxml-->
+<!--任务-->
+<view class="container">
+    <view class="page-body">
+        <!--我发起tab时，显示  -->
+        <view class='simple-checkbox'>
+            <view class="project-name">项目：{{data.project_name}}</view>
+            <!--点击审核 -->
+             <view class='btn-ok' wx-if="{{data.audit_status == 1}}" bindtap='handleCheck'>
+                <text>点击</text>
+                <text>审核</text>
+            </view> 
+            <!--审核通过  -->
+             <view class='task-complate' wx-if="{{data.audit_status == 2}}">
+                <icon type="success" size="80" color="rgba(83, 176, 56, 0.87)" />
+            </view>
+            <view class="task-name">{{data.task_name}}</view>
+        </view>
+        <view class='todo_lists'>
+            <view class="todo_cell_warp ">
+                <view class='todo_cell'>
+                    <view class='content'>
+                        <text>延期说明：</text>
+                        <text class="todo_info">{{data.out_time_note}}</text>
+                    </view>
+                    <view class='content'>
+                        <text>审核状态：</text>
+                        <text class="todo_info">{{data.audit_status_name}}</text>
+                    </view>
+                    <view class='content'>
+                        <text>提交时间：</text>
+                        <text class="todo_info">{{data.added_time}}</text>
+                    </view>
+                    <!--可以获取列表上的数据  -->
+                    <view class='content'>
+                        <text>工作进度：</text>
+                        <progress percent="{{data.work_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="5" show-info/>
+                    </view>
+                    <view class='content'>
+                        <text>时间进度：</text>
+                        <progress percent="{{data.time_progress}}" color="#f66239" stroke-width="5" show-info/>
+                    </view>
+                    <view class='content'>
+                        <text>汇报说明：</text>{{data.report_content}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

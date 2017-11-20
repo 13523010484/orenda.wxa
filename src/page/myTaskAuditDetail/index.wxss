@@ -1,0 +1,92 @@
+/* page/taskDetail/index.wxss */
+
+.page-body {
+    margin-bottom: 40rpx;
+}
+
+.simple-checkbox {
+    padding: 20rpx 30rpx 40rpx;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    margin-top: 6rpx;
+}
+
+.simple-checkbox .project-name {
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.simple-checkbox .task-complate {
+    text-align: center;
+}
+
+.simple-checkbox .task-name {
+    text-align: center;
+    margin-top: 30rpx;
+    color: #333;
+}
+
+.simple-checkbox .btn-ok {
+    width: 160rpx;
+    height: 160rpx;
+    margin: 0 auto;
+    border-radius: 50%;
+    /* background-color: rgba(83, 176, 56, 0.87); */
+    display: -webkit-box;
+    border: 1px solid #999 !important;
+    background-color: #fff;
+    color: #999;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-direction: column;
+    box-shadow: inset 0 4px 12px 0 #e5e5e5;
+}
+
+.btn-ok>text {
+    line-height: 45rpx;
+    text-align: center;
+}
+
+.todo_cell .content {
+    font-size: 28rpx;
+    color: #999;
+    text-align: left;
+    padding: 10rpx 0;
+}
+
+.todo_cell .content>text:first-child {
+    margin-right: 10rpx;
+}
+
+.todo_lists, .todo_cell {
+    background-color: transparent;
+}
+
+.todo_cell:active {
+    background-color: transparent;
+}
+
+.todo_info {
+    color: #555;
+}
+
+/*汇报记录  */
+
+.put_recode {
+    margin: 28rpx 24rpx 28rpx 96rpx;
+    color: #999;
+    font-size: 26rpx;
+    word-break: break-all;
+}
+
+.put_recode .user_name {
+    font-weight: bold;
+    margin: 0 10rpx;
+}
+
+.put_recode_warp {
+    margin-bottom: 96rpx;
+}

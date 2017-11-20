@@ -1,0 +1,36 @@
+<!--page/task/report.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view class="page_hd">
+            <view class='content'>
+                <text>当前工作进度：</text>
+                <progress percent="{{data.work_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="5" show-info/>
+            </view>
+            <view class='content'>
+                <text>当前时间进度：</text>
+                <progress percent="{{data.time_progress}}" color="rgba(83, 176, 56, 0.87)" stroke-width="5" show-info/>
+            </view>
+        </view>
+        <form class='form_warp'>
+            <view class="slider-view">
+                <text class="title">更新工作进度</text>
+                <slider data-slider-value="{{sliderValue}}" bindchange="sliderchange" min="{{data.work_progress}}" value="" activeColor="rgba(83, 176, 56, 0.87)" show-value id='work-progress' />
+            </view>
+            <view class='form-item'>
+                <text class="section__title section__title_first">工时 (必填：单位/时)
+                                </text>
+                <input class='input' bindinput="bindinput" type='text' name='text' placeholder='请填写工时' />
+            </view>
+            <text class="section__title-tips">请正确填写本次工作实际用时，不满一小时填写1</text>
+
+            <view class='form-item'>
+                <text class="section__title">汇报内容(必填) </text>
+                <textarea bindinput="bindTextarea" class='textarea' type='textarea' name='textarea' placeholder='请填写汇报内容' />
+            </view>
+            <view class='btn-area'>
+                <button type='primary' class='btn' bindtap='save'>保存</button>
+                <button class='btn' bindtap='cancle'>取消</button>
+            </view>
+        </form>
+    </view>
+</view>
