@@ -23,9 +23,12 @@ Page({
     auditPassData: function (taskWorkProgressId) {
         var $this = this
         app.request(myTaskAuditPassUrl, { task_work_progress_id: taskWorkProgressId }, function (res) {
-            if (res.code == 1) {
+            console.log(res);
+            if (!res.hasErrors) {
+                $this.data.data.audit_status=2;
+                $this.data.data.audit_status_name = '通过';
                 $this.setData({
-                    data: res.data
+                    data: $this.data.data
                 })
             }
         }, 'POST')
@@ -37,7 +40,6 @@ Page({
     /* 点击完成 */
     handleCheck: function (options) {
         this.auditPassData(this.options.taskworkprogressid)
-        //this.auditDetailData(this.options.taskworkprogressid)
     },   
     /* 监听页面显示 */
     onShow: function () {
