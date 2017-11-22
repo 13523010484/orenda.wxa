@@ -8,7 +8,7 @@
                 <image src='{{userInfo.avatarUrl}}' wx:if="{{userInfo.avatarUrl}}"></image>
                 <image src='/image/icon.png' wx:if="{{userInfo && !userInfo.avatarUrl}}"></image>
             </view>
-            <view class='user-name'>{{userInfo.nickName}}</view>
+            <view class='user-name'>{{userInfo.userName}}</view>
         </view>
 
         <!--我的任务  -->

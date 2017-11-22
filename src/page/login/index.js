@@ -42,8 +42,8 @@ Page({
             console.log(res)
             if (res.code == 1) {
                 // 登录成功，跳转到主页面
-                wx.setStorageSync('loginInfo', res.data);
-                app.globalData.hasLogin == res.data;
+                wx.setStorageSync('userInfo', res.data);
+                app.globalData.userInfo == res.data;
                 wx.switchTab({
                     url: '/page/task/index'
                 })

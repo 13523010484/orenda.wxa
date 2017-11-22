@@ -14,7 +14,8 @@ Page({
                 })
                 $this.setData({
                     data: tree,
-                    root: root
+                    root: root,
+                    showloading: true
                 })
             }
         })

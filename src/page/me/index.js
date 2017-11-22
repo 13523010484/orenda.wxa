@@ -7,13 +7,15 @@ Page({
     data: {
 
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         //点击初次进入页面时加载数据
         this.getUserInfo();
+        this.setData({
+            userInfo: app.globalData.userInfo
+        })
     },
     /**
    * 获取微信公共信息
@@ -31,13 +33,9 @@ Page({
             wx.getUserInfo({
                 success(res) {
                     app.globalData.haswxLogin = res.userInfo
+                    res.userInfo.userName = app.globalData.userInfo.userName
                     that.setData({
                         userInfo: res.userInfo
-                    })
-                },
-                fail(res) {
-                    that.setData({
-                        userInfo: true
                     })
                 }
             })

@@ -2,8 +2,8 @@
 <view class="container">
     <view class="page-body">
         <view class='todo_lists'>
-            <view class="todo_cell_warp" wx:for="{{arr}}" wx:key="{{item.id}}">
-                <view class='todo_cell' data-task-id="{{item.task_id}}" bindtap='jumpDetail'>
+            <view class="todo_cell_warp">
+                <view class='todo_cell' wx:for="{{arr}}" wx:key="{{item.id}}" data-task-id="{{item.task_id}}" bindtap='jumpDetail'>
                     <view class='item-name'>{{item.NAME}}</view>
                     <view class='item-content'>
                         <view class="item-cells">

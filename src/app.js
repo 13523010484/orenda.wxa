@@ -12,7 +12,8 @@ App({
         console.log('App Hide')
     },
     globalData: {
-        haswxLogin: wx.getStorageSync('loginInfo') || false
+        haswxLogin: false,
+        userInfo: wx.getStorageSync('userInfo') || false
     },
     // request
     request(url, param, callback, method) {

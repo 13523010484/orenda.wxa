@@ -1,7 +1,9 @@
 <!--page/taskDetail/index.wxml-->
 <!--任务-->
+<import src="../common/loading.wxml" />
 <view class="container">
-    <view class="page-body">
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page-body" hidden="{{!showloading}}">
         <!-- 暂时先取出点击完成操作 -->
         <!-- <view class='simple-checkbox'>
             <view class="project-name">项目：{{data.project_name}}</view>

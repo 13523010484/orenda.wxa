@@ -35,7 +35,8 @@ Page({
                 })
                 $this.setData({
                     dataEdit: dataEdit,
-                    arr: arr
+                    arr: arr,
+                    showloading: true
                 })
             }
         })
@@ -52,29 +53,10 @@ Page({
         //请求数据函数
         this.getData(options.taskid)
         this.getEditData(options.taskid)
-        // if (options.id == 2) {
-        //     this.setData({
-        //         percent1: 80,
-        //         percent2: 100,
-        //         percent3: 100
-        //     })
-        // }
-        // this.setData({
-        //     status: options.id
-        // })
     },
     /* 监听页面显示 */
     onShow: function () {
     },
-    /* 点击完成 */
-    // handle_complate: function () {
-    //     this.setData({
-    //         status: 2,
-    //         percent1: 70,
-    //         percent2: 100,
-    //         percent3: 100
-    //     })
-    // },
     
     /* 点击通过审核 */
     handle_check: function () {
@@ -82,23 +64,5 @@ Page({
             status: 2,
             percent2: 100
         })
-    },
-    /* 监听页面隐藏 */
-    onHide: function () {
-
-    },
-    /* 监听页面卸载 */
-    onUnload: function () {
-
-    },
-    /* 监听用户下拉动作 */
-    onPullDownRefresh: function () {
-        console.log('下拉刷新')
-    },
-    /* 监听页面上拉触底事件 */
-    onReachBottom: function () {
-    },
-    /* 用户点击右上角分享 */
-    onShareAppMessage: function () {
     }
 })

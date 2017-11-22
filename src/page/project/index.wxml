@@ -1,6 +1,8 @@
 <!--项目-->
+<import src="../common/loading.wxml" />
 <view class="container">
-    <view class="page-body">
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page-body" hidden="{{!showloading}}">
         <!--项目列表  -->
         <view class='projects'>
             <view class='project' bindtap='jumpDetail' data-project-id='{{item.projectId}}' wx:for="{{root}}" wx:key="{{item.id}}}">

@@ -3,63 +3,36 @@ const myTaskListUrl = app.api.myTaskListUrl
 const myTaskCanAuditUrl = app.api.myTaskCanAuditUrl
 
 Page({
+    /**
+     * 页面的初始数据
+     */
     data: {
-        about: 1,
-        taskReqArray: []
+        tab_status: 1,
+        open1: true,
+        open2: false,
+        open3: true,
+        open4: false
     },
-    /* 我的任务 数据请求 */
-    getList: function () {
-        var $this = this
-        app.request(myTaskListUrl, { about: $this.data.about }, function (res) {
-            /* 请求接口成功时 */
-            if (res.code == 1) {
-                var data = res.data
-                if ($this.data.about == 2) {
-                    $this.taskReqArray = [];
-                    data.A.forEach(function (item, index) {
-                        $this.taskReqArray.push({
-                            ishidden: true
-                        });
-                    })
-                }
-                $this.setData({
-                    data: data,
-                    taskReqArray: $this.taskReqArray
-                })
-            }
-        })
-    },
-    //可审列表 数据请求
-    getAuditList: function (taskId) {
-        var $this = this
-        app.request(myTaskCanAuditUrl, { task_id: taskId }, function (res) {
-            if (res.code == 1) {
-                var auditData = res.data
-                $this.setData({
-                    auditData: auditData
-                })
-            }
-        })
-    },
-    /* 监听页面加载 */
+
+    /**
+     * 生命周期函数--监听页面加载
+     */
     onLoad: function (options) {
-        this.getUserInfo()
-        // this.getList()
+        this.getUserInfo();
         //未登录跳转
-        var self = this, logininfo = wx.getStorageSync('loginInfo')
+        var self = this, logininfo = wx.getStorageSync('userInfo')
+
         if (!(logininfo && logininfo.userId)) {
             wx.redirectTo({
                 url: '/page/login/index',
             })
+            return false
         }
-        //假设请求接口结束，1秒后模拟关闭loading
-        setTimeout(function () {
-            self.setData({
-                showloading: true
-            })
-        }, 1000)
+        this.get_task_list();
     },
-    /* 获取公共信息 */
+    /**
+     * 获取微信公共信息
+    */
     getUserInfo() {
         var that = this
         if (app.globalData.haswxLogin === false) {
@@ -90,41 +63,51 @@ Page({
     },
     // 切换类型
     switch_tab: function (e) {
+        //点击切换时要判断当前切换情况，避免多次数据请求
+        if (e.target.id != this.data.tab_status) {
+            this.setData({
+                tab_status: e.target.id
+            })
+            if ((this.data.tab_status == 1 && !this.data.my_charge_task) || (this.data.tab_status == 2 && !this.data.my_launched_task)) {
+                this.get_task_list()
+            }
+        }
+    },
+    //获取我的任务列表，包括我负责的、我发起的任务
+    get_task_list: function () {
+        var $this = this
         this.setData({
-            about: e.target.id
+            showloading: false
         })
-        this.getList(this)
+        app.request(myTaskListUrl, { about: this.data.tab_status }, function (res) {
+            /* 请求接口成功时 */
+            if (res.code == 1) {
+                // 我负责的任务
+                if ($this.data.tab_status == 1) {
+                    $this.setData({
+                        my_charge_task: res.data,
+                        showloading: true
+                    })
+                }
+                // 我发起的任务赋值
+                if ($this.data.tab_status == 2) {
+                    $this.setData({
+                        my_launched_task: res.data,
+                        showloading: true
+                    })
+                }
+            }
+        })
     },
     // 折叠面板
     change_status: function (e) {
-        var that = this
-        this.taskReqArray[e.currentTarget.dataset.taskIndex].ishidden = !this.taskReqArray[e.currentTarget.dataset.taskIndex].ishidden;
-        this.taskReqArray.forEach(function (item, index) {
-            if (index !== e.currentTarget.dataset.taskIndex && item.ishidden == false) {
-                item.ishidden = true;
-            }
-            if (item.ishidden == false) {
-                that.getAuditList(e.currentTarget.dataset.taskId)
-            }
-        })
-        that.setData({
-            taskReqArray: this.taskReqArray
-        });
+        this.data[e.currentTarget.id] = !this.data[e.currentTarget.id]
+        this.setData(this.data)
     },
-    // 我负责的 任务详情
+    // 点击列表跳转到详情
     jumpDetail: function (e) {
         wx.navigateTo({
-            url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId,
+            url: '/page/taskDetail/index?taskid=' + e.currentTarget.id,
         })
-    },
-    // 我发起的 任务详情
-    jumpAduitDetail: function (e) {
-        console.log(e.currentTarget.dataset.taskWorkProgressId)
-        wx.navigateTo({
-            url: '/page/myTaskAuditDetail/index?taskworkprogressid=' + e.currentTarget.dataset.taskWorkProgressId,
-        })
-    },
-    onShow: function() {
-        this.getList()
     }
 })
