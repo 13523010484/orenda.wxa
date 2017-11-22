@@ -100,3 +100,15 @@
 .border_top {
     border-top: 1rpx solid #e5e5e5;
 }
+.assign_due{
+    color: #ff4c4c;
+}
+.assign_waiting{
+    color: #ff9518;
+}
+.load_more,.empty{
+  height:80rpx;
+  color:#888;
+  text-align:center;
+  line-height:80rpx
+}

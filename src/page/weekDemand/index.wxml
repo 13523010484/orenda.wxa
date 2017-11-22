@@ -2,44 +2,26 @@
 <view class='container'>
     <view class='page-body'>
         <view class='events-day'>
-            <block wx:for="{{arr}}" wx:for-index="idx" wx:for-item="itemName">
-                <view class='header'>{{idx}}</view>
+            <block wx:for="{{arr}}" wx:for-item="itemName">
+                <view class='header'>{{itemName.date}}</view>
                 <view class="panel_warp">
-                    <view class="panel__list" data-requirement-id="{{item.requirement_id}}" wx:for="{{itemName}}" bindtap='jumpDetail'>
+                    <view class="panel__list" data-requirement-id="{{item.requirement_id}}" wx:for="{{itemName.content}}" wx:for-item="item" bindtap='jumpDetail'>
                         <view class="panel__list_bd">
-                            <view class='title'>
-                                {{item.name}}
-                            </view>
+                            <view class='title'>{{item.name}}</view>
                             <view class="desc">
                                 <text>责任人：{{item.responsible_user_name}}</text>
-                                <text>延期：{{item.expired_days}}天</text>
-                                <text class="{{item.status == 64?'success':''}}">{{item.status_name}}</text>
+                                <text wx:if="{{item.expired_days>0}}" class="assign_due">{{item.ask_end_time}} 已逾期</text>
+                                <text wx:if="{{item.expired_days<=0}}">{{item.ask_end_time}}</text>
+                                <text wx:if="{{item.status == 2}}" class='assign_due'>{{item.status_name}}</text>
+                                <text wx:if="{{item.status == 4}}" class='assign_waiting'>{{item.status_name}}</text>
+                                <text wx:if="{{item.status == 64}}" class='success'>{{item.status_name}}</text>
                             </view>
                         </view>
                     </view>
                 </view>
             </block>
         </view>
+        <view class="empty" wx:if="{{hasLoading && arr.length == 0}}"> 暂无数据哦～ </view>
+        <view class="load_more" wx:if="{{arr.length > 0 && loadMore == true}}">加载更多..</view>
     </view>
 </view>
-
-<!--本周需求列表  -->
-<!-- <view class='container'>
-    <view class='page-body'>
-        <view class='events-day'>
-            <view class='header'>2017/10/10</view>
-            <view class="panel_warp">
-                <view class="panel__list" bindtap='jumpDetail'>
-                    <view class="panel__list_bd">
-                        <view class='title'>小蜗牛</view>
-                        <view class="desc">
-                            <text>责任人：贾秋花</text>
-                            <text>延期：10天</text>
-                            <text class="{{item.status == 64?'success':''}}">开发已完成</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </view>
-</view>  -->

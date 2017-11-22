@@ -1,24 +1,25 @@
 //获取app.js
 var app = getApp()
 const loginUrl = app.api.loginUrl
+
 Page({
     /* 页面初始化数据 */
     data: {
         login_name: '',
         login_password: '',
-        // code: ''
+        code: ''
     },
     /**
      * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
-        //var that = this
+        var that = this
         //微信登录获取code
-        // app.getWxLogin(function (code) {
-        //     that.setData({
-        //         code: code
-        //     })
-        // })
+        app.getWxLogin(function (code) {
+            that.setData({
+                code: code
+            })
+        })
     },
     bindKeyInput: function (e) {
         this.setData({
@@ -35,9 +36,10 @@ Page({
         var $this = this, paras = {
             loginName: this.data.login_name,
             loginPassword: this.data.login_password,
-            //code: this.data.code
+            code: this.data.code
         }
         app.request(loginUrl, paras, function (res) {
+            console.log(res)
             if (res.code == 1) {
                 // 登录成功，跳转到主页面
                 wx.setStorageSync('loginInfo', res.data);

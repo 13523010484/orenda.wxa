@@ -67,14 +67,15 @@ Page({
     onShow: function () {
     },
     /* 点击完成 */
-    handle_complate: function () {
-        this.setData({
-            status: 2,
-            percent1: 70,
-            percent2: 100,
-            percent3: 100
-        })
-    },
+    // handle_complate: function () {
+    //     this.setData({
+    //         status: 2,
+    //         percent1: 70,
+    //         percent2: 100,
+    //         percent3: 100
+    //     })
+    // },
+    
     /* 点击通过审核 */
     handle_check: function () {
         this.setData({

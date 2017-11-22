@@ -138,7 +138,7 @@ icon {
 }
 
 .todo_cell text.assign_due {
-    color: #f66239;
+    color: #ff4c4c;
 }
 
 .todo_cell .item-content>text {

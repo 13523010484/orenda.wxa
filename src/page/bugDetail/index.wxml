@@ -13,7 +13,9 @@
                         <text>{{data.appointed_person_name}}</text>
                     </view>
                     <view class="item-cells">
-                        <text>{{data.status_name}}</text>
+                        <text wx:if="{{data.status == 1}}" class='assign_due'>{{data.status_name}}</text>
+                        <text wx:if="{{data.status == 2}}" class='assign_waiting'>{{data.status_name}}</text>
+                        <text wx:if="{{data.status == 4}}" class='success'>{{data.status_name}}</text>
                     </view>
                 </view>
             </view>

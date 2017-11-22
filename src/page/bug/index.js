@@ -1,6 +1,7 @@
 //获取app.js
 var app = getApp()
 const bugUrl = app.api.bugUrl
+const util = require('../../util/util.js')
 Page({
     data: {
     },
@@ -25,7 +26,13 @@ Page({
 
     /* 页面加载 */
     onLoad: function (options) {
-        this.getData()
+        //获取本地日期
+        var time = util.formatTime(new Date())
+        this.setData({
+            time: time
+        })
+        // 请求 bug列表数据
+        this.getData();
     },
 
     /* 跳转至bug详情页面 */
