@@ -20,7 +20,7 @@
         "navigationBarTitleText": "小蜗牛",
         "navigationBarBackgroundColor": "#ffffff",
         "backgroundColor": "#fafafa",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": false
     },
     "tabBar": {
         "color": "#999999",

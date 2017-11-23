@@ -3,6 +3,7 @@ const taskListsUrl = app.api.taskListsUrl
 
 Page({
     data: {
+        showloading: false
     },
     /* 数据请求函数*/
     getData: function (projectId) {
@@ -16,8 +17,8 @@ Page({
                 })
                 //更新数据
                 $this.setData({
-                    data: data,
-                    arr: arr
+                    arr: arr,
+                    showloading: true
                 })
             }
         })

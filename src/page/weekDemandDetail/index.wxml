@@ -1,5 +1,8 @@
+<!--本周需求详情页  -->
+<import src="../common/loading.wxml" />
 <view class='container'>
-    <view class='page-body'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class='page-body' hidden="{{!showloading}}">
         <view class='header'>
             <view class='resource-info'>
                 <text>项目：</text>

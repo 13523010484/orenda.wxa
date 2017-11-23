@@ -1,7 +1,8 @@
-<!--page/taskDetail/index.wxml-->
-<!--任务-->
-<view class="container">
-    <view class="page-body">
+<!--我发起的可审任务-->
+<import src="../common/loading.wxml" />
+<view class='container'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class='page-body' hidden="{{!showloading}}">
         <!--我发起tab时，显示  -->
         <view class='simple-checkbox'>
             <view class="project-name">项目：{{data.project_name}}</view>

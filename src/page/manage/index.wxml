@@ -1,7 +1,9 @@
 <!--page/manage/index.wxml 追踪-->
 <!--任务-->
-<view class="container">
-    <view class="page-body">
+<import src="../common/loading.wxml" />
+<view class='container'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class='page-body' hidden="{{!showloading}}">
         <!-- tab切换 -->
         <view class='tab_warp'>
             <view class="tab {{tab_status==0?'active':''}}" id='0' bindtap="switch_tab">进行中</view>

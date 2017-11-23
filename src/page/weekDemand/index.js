@@ -42,11 +42,6 @@ Page({
             }
         })
     },
-
-    /* 监听页面加载 */
-    onLoad: function () {
-
-    },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
         console.log(e.currentTarget.dataset.requirementId);
@@ -68,11 +63,6 @@ Page({
             return false
         }
         this.getData()
-    },
-    // 下拉刷新
-    onPullDownRefresh: function () {
-        this.getData()
-        wx.stopPullDownRefresh()
     },
     // 上拉加载
     onReachBottom: function () {

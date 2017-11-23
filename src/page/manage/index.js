@@ -4,7 +4,8 @@ const taskListsUrl = app.api.taskListsUrl
 
 Page({
     data: {
-        tab_status: 0
+        tab_status: 0,
+        showloading: false
     },
     //"动态" 接口请求
     getData_loginstatus: function () {
@@ -17,8 +18,8 @@ Page({
                     arr.push(item)
                 })
                 $this.setData({
-                    data: data,
-                    arr: arr
+                    arr: arr,
+                    showloading: true
                 })
             }
         })

@@ -65,15 +65,10 @@ Page({
             url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId
         })
     },
-    /* 下拉刷新 */
-    onPullDownRefresh: function() {
-        this.getData()
-        wx.stopPullDownRefresh()
-    },
     /* onShow 页面显示 */
-    onShow: function() {
+    onShow: function () {
         let storageData = wx.getStorageSync('myRespTaskData')
-        if (storageData){
+        if (storageData) {
             this.setData({
                 data: storageData,
                 showloading: true
@@ -83,7 +78,7 @@ Page({
         this.getData()
     },
     /* 页面卸载时，缓存数据 */
-    onUnload: function() {
+    onUnload: function () {
         if (!(JSON.stringify(this.data.data) == '{}')) wx.setStorageSync('myRespTaskData', this.data.data)
     }
 })

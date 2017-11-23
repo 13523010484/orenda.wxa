@@ -20,19 +20,10 @@ Page({
             }
         })
     },
-
-    /* 监听页面加载 */
-    onLoad: function () {
-    },
-    // 下拉刷新
-    onPullDownRefresh: function (options) {
-        this.getData(this.options.bugid)
-        wx.stopPullDownRefresh()
-    },
     /* 监听页面显示 */
     onShow: function (options) {
         let storageData = wx.getStorageSync('bugDetailData')
-        if(storageData) {
+        if (storageData) {
             this.setData({
                 data: storageData,
                 showloading: true

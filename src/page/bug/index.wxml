@@ -3,7 +3,6 @@
 <view class="container">
     <template is="loading" data="{{showloading: showloading}}" />
     <view class="page-body" hidden="{{!showloading}}">
-
         <!--bug列表  -->
         <view class='todo_list'>
             <!--bug1  -->

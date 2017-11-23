@@ -1,6 +1,8 @@
-<!--page/project/lists.wxml-->
-<view class="container">
-    <view class="page-body">
+<!--项目下的任务列表-->
+<import src="../common/loading.wxml" />
+<view class='container'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class='page-body' hidden="{{!showloading}}">
         <view class='todo_lists'>
             <view class="todo_cell_warp">
                 <view class='todo_cell' wx:for="{{arr}}" wx:key="{{item.id}}" data-task-id="{{item.task_id}}" bindtap='jumpDetail'>

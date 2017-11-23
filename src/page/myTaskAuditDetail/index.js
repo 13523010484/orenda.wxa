@@ -4,6 +4,7 @@ const myTaskAuditPassUrl = app.api.myTaskAuditPassUrl
 
 Page({
     data: {
+        showloading: false
     },
     // 可审任务详情 数据请求
     auditDetailData: function (taskWorkProgressId) {
@@ -14,7 +15,8 @@ Page({
                 //更新数据
                 $this.setData({
                     data: data,
-                    audit_status: data.audit_status
+                    audit_status: data.audit_status,
+                    showloading: true
                 })
             }
         })

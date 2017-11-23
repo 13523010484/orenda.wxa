@@ -7,7 +7,6 @@ Page({
         arr: [],
         showloading: false
     },
-
     /* 数据请求函数*/
     getData: function () {
         var $this = this
@@ -25,12 +24,6 @@ Page({
             }
         })
     },
-
-    /* 页面加载 */
-    onLoad: function () {
-
-    },
-
     /* 跳转至bug详情页面 */
     jumpDetail: function (e) {
         var urlWithBugId = '/page/bugDetail/index?bugid=' + e.currentTarget.dataset.bugId;
@@ -41,7 +34,7 @@ Page({
 
     /* 生命周期函数--监听页面显示 */
     onShow: function () {
-    let storageData = wx.getStorageSync('bugListData')
+        let storageData = wx.getStorageSync('bugListData')
         if (storageData) {
             this.setData({
                 arr: storageData.arr,
@@ -50,11 +43,6 @@ Page({
             return false
         }
         this.getData()
-    },
-    /* 监听用户下拉动作 */
-    onPullDownRefresh: function () {
-        this.getData();
-        wx.stopPullDownRefresh()
     },
     /* 生命周期函数--监听页面卸载 */
     onUnload: function () {
