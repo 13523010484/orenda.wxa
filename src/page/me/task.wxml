@@ -35,7 +35,7 @@
                 <text class="icon {{open2?'icon_active':''}}"></text>
             </view>
             <view class="todo_cell_warp" wx:for="{{data.F}}" wx:key="{{item.id}}" hidden='{{!open2}}'>
-                <view class='todo_cell' id="2">
+                <view class='todo_cell' data-task-id='{{item.task_id}}' bindtap='jumpDetail' id="2">
                     <view class='item-name'>{{item.NAME}}</view>
                     <view class='item-content'>
                         <view class="item-cells">

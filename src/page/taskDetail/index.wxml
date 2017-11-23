@@ -84,6 +84,6 @@
             </view>
         </view>
         <!--是我的任务时可以进行汇报  -->
-        <navigator url="report?taskId={{data.task_id}}" hidden="{{showReport}}" class="float-btn" hover-class='float-btn-active'>我要汇报</navigator>
+         <navigator url="report?taskId={{data.task_id}}" hidden="{{showReport}}" class="float-btn" hover-class='float-btn-active'>我要汇报</navigator> 
     </view>
 </view>

@@ -4,18 +4,21 @@ const taskListEditHistoryUrl = app.api.taskListEditHistoryUrl
 
 Page({
     data: {
-        showReport: true
+        showReport: true,
+        workReportProgress: ''
     },
     //请求数据
     getData: function (taskId) {
         var $this = this
         app.request(taskListsDetailUrl, { task_id: taskId }, function (res) {
             if (res.code == 1) {
-                var data = res.data
+                var data = res.data, workReportProgress = ''
                 //更新数据
                 $this.setData({
-                    data: data
+                    data: data,
+                    workReportProgress: data.work_report_progress
                 })
+                //workReportProgress = data.work_report_progress
             }
         })
     },
@@ -39,15 +42,16 @@ Page({
     /* 页面加载 */
     onLoad: function (options) {
         //判断页面来源
-        var parentsPagesUrl = getCurrentPages()[0].route
-        if (parentsPagesUrl == 'page/task/index') {
-            this.setData({
-                showReport: false
-            })
-        }
+        // var parentsPagesUrl = getCurrentPages()[0].route
+        // if (parentsPagesUrl == 'page/task/index') {
+        //     this.setData({
+        //         showReport: false
+        //     })
+        // }
         //请求数据函数
         this.getData(options.taskid)
         this.getEditData(options.taskid)
+        console.log(this)
     },
     /* 监听页面显示 */
     onShow: function () {

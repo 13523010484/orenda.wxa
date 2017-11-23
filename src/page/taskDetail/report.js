@@ -83,7 +83,7 @@ Page({
             is_submit: this.data.is_submit
         }
         app.request(myTaskReportSaveUrl, paras, function (res) {
-            if (res.code == 1) {
+            if (res.hasErrors == false) {
                 wx.hideLoading()
                 wx.showModal({
                     title: '提示',
@@ -101,57 +101,6 @@ Page({
     // 保存
     save: function () {
         this.saveData()
-
-        // 下面写的烂透了！删掉即可！
-        // var self = this;
-        // if (new_progress == 0) {
-        //     var is_submit = 0
-        //     this.setData({
-        //         is_submit: is_submit
-        //     })
-        //     this.saveData()
-        // } else if (new_progress < 100 && new_progress > 0) {
-        //     var is_submit = 0
-        //     this.setData({
-        //         is_submit: is_submit
-        //     })
-        //     this.saveData()
-        //     upload_tips()
-        // } else {
-        //     wx.showModal({
-        //         title: '提示',
-        //         content: '审核通过，是否自动提交',
-        //         success: function (res) {
-        //             if (res.confirm) {
-        //                 console.log('点击了确认按钮')
-        //                 var is_submit = 1
-        //                 getCurrentPages()[getCurrentPages().length - 1].setData({
-        //                     is_submit: is_submit
-        //                 })
-        //                 getCurrentPages()[getCurrentPages().length - 1].saveData()
-        //                 upload_tips()
-        //             } else if (res.cancel) {
-        //                 console.log('点击了取消按钮')
-        //             }
-        //         }
-        //     })
-        // }
-        // function upload_tips() {
-        //     wx.showLoading({
-        //         title: '上传中',
-        //     })
-        //     setTimeout(function () {
-        //         wx.hideLoading()
-        //         wx.showToast({
-        //             title: '成功',
-        //             icon: 'success',
-        //             duration: 1000
-        //         })
-        //         setTimeout(function () {
-        //             self.cancle()
-        //         }, 500)
-        //     }, 500)
-        // }
     },
     // 取消
     cancle: function () {

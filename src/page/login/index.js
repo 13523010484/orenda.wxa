@@ -38,10 +38,13 @@ Page({
             loginPassword: this.data.login_password,
             code: this.data.code
         }
+        wx.showLoading({
+            title: '登录中...',
+        })
         app.request(loginUrl, paras, function (res) {
-            console.log(res)
             if (res.code == 1) {
                 // 登录成功，跳转到主页面
+                wx.hideLoading()
                 wx.setStorageSync('userInfo', res.data);
                 app.globalData.userInfo == res.data;
                 wx.switchTab({
