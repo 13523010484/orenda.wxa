@@ -1,7 +1,11 @@
 var app = getApp()
 Page({
+
+    /**
+     * 页面的初始数据
+     */
     data: {
-        showloading: false
+
     },
     /**
      * 生命周期函数--监听页面加载
@@ -10,8 +14,7 @@ Page({
         //点击初次进入页面时加载数据
         this.getUserInfo();
         this.setData({
-            userInfo: app.globalData.userInfo,
-            showloading: true
+            userInfo: app.globalData.userInfo
         })
     },
     /**
@@ -59,8 +62,7 @@ Page({
         wx.showLoading({
             title: '退出中',
         })
-        wx.clearStorageSync('loginInfo')
-        wx.clearStorageSync('storageData')
+        wx.clearStorageSync('userInfo')
         setTimeout(function () {
             wx.hideLoading()
             wx.redirectTo({
