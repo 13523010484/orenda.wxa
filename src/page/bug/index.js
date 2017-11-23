@@ -1,14 +1,17 @@
 //获取app.js
 var app = getApp()
 const bugUrl = app.api.bugUrl
-const util = require('../../util/util.js')
+
 Page({
     data: {
+        arr: [],
+        showloading: true
     },
 
     /* 数据请求函数*/
-    getData: function () {
+    get_bug_list: function () {
         var $this = this
+        console.log(this)
         app.request(bugUrl, {}, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
@@ -17,66 +20,45 @@ Page({
                     arr.push(item)
                 })
                 $this.setData({
-                    data: data,
-                    arr: arr
+                    arr: arr,
+                    showloading: true
                 })
             }
         })
     },
 
     /* 页面加载 */
-    onLoad: function (options) {
-        //获取本地日期
-        var time = util.formatTime(new Date())
-        this.setData({
-            time: time
-        })
-        // 请求 bug列表数据
-        this.getData();
+    onLoad: function () {
     },
 
     /* 跳转至bug详情页面 */
     jumpDetail: function (e) {
-        console.log(e.currentTarget.dataset.bugId);
         var urlWithBugId = '/page/bugDetail/index?bugid=' + e.currentTarget.dataset.bugId;
-        console.log(urlWithBugId);
         wx.navigateTo({
             url: urlWithBugId,
         })
     },
 
-    /* 页面初次渲染完成 */
-    onReady: function () {
-
-    },
-
     /* 生命周期函数--监听页面显示 */
     onShow: function () {
-
+        let storageData = wx.getStorageSync('bugListData')
+        if (storageData) {
+            this.setData({
+                arr: storageData.arr
+            })
+            return false
+        }
+        if(this.data.arr.length == 0) this.get_bug_list()
     },
-
-    /* 生命周期函数--监听页面隐藏 */
-    onHide: function () {
-
-    },
-
-    /* 生命周期函数--监听页面卸载 */
-    onUnload: function () {
-
-    },
-
     /* 监听用户下拉动作 */
     onPullDownRefresh: function () {
-        console.log('pullDownRefresh')
+        this.get_bug_list();
+        wx.stopPullDownRefresh()
     },
-
-    /* 页面上拉触底事件的处理函数 */
-    onReachBottom: function () {
-
+    /* 生命周期函数--监听页面卸载 */
+    onUnload: function () {
+        if (this.data.arr.length > 0) {
+            wx.setStorageSync('bugListData', this.data)
+        }
     },
-
-    /* 用户点击右上角分享 */
-    onShareAppMessage: function () {
-
-    }
 })

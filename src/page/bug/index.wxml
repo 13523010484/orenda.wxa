@@ -1,6 +1,8 @@
-<!--page/bug/index.wxml-->
+<!--bug列表  -->
+<import src="../common/loading.wxml" />
 <view class="container">
-    <view class="page-body">
+     <template is="loading" data="{{showloading: showloading}}" /> 
+    <view class="page-body" hidden="{{!showloading}}">
 
         <!--bug列表  -->
         <view class='todo_list'>
@@ -14,8 +16,8 @@
                     </view>
                     <view class="item-cells">
                         <image src='/image/task_time.png'></image>
-                        <text wx:if="{{item.expired_days>0}}" class='assign_due'>{{item.ask_end_time}} 已逾期</text>
-                        <text wx:if="{{item.expired_days<=0}}">{{time}}</text>
+                        <text wx:if="{{item.expired_days>0}}" class='assign_due'>{{item.ask_time}} 已逾期</text>
+                        <text wx:if="{{item.expired_days<=0}}">{{item.ask_time}}</text>
                     </view>
                     <view class="item-cells">
                         <text wx:if="{{item.status == 1}}" class='assign_due'>{{item.status_name}}</text>

@@ -1,11 +1,11 @@
 var app = getApp()
 const weekDemandUrl = app.api.weekDemandUrl
-const util = require('../../util/util.js')
 
 Page({
     data: {
         page: 1,
         size: 6,
+        reqAble: true,
         loadMore: false,
         hasLoading: false,
         arr: []
@@ -16,6 +16,15 @@ Page({
         app.request(weekDemandUrl, { page: $this.data.page, size: $this.data.size }, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
+                if (!(JSON.stringify(res.data) == '{}')) {
+                    console.log('res.data不为空')
+                    $this.data.reqAble = false;
+                    let page = $this.data.page + 1
+                    $this.setData({
+                        page: page,
+                        reqAble: $this.data.reqAble
+                    })
+                }
                 for (var i in res.data) {
                     console.log(i);
                     $this.data.arr.push({
@@ -37,20 +46,10 @@ Page({
 
     /* 监听页面加载 */
     onLoad: function () {
-        //获取本地日期
-        var time = util.formatTime(new Date())
-        this.setData({
-            time: time
-        })
         // 显示加载提示
         wx.showLoading({
             title: '加载中...',
         })
-    },
-    // 折叠面板
-    change_status: function (e) {
-        this.data[e.currentTarget.id] = !this.data[e.currentTarget.id]
-        this.setData(this.data)
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
@@ -60,14 +59,14 @@ Page({
         })
     },
     onShow: function () {
-        let storangeData = wx.getStorageSync('weekDemandData')
-        if (storangeData) {
+        let storageData = wx.getStorageSync('weekDemandData')
+        if (storageData) {
             this.setData({
-                page: storangeData.page,
-                size: storangeData.size,
-                arr: storangeData.arr,
-                hasLoading: storangeData.hasLoading,
-                loadMore: storangeData.loadMore
+                page: storageData.page,
+                size: storageData.size,
+                arr: storageData.arr,
+                hasLoading: storageData.hasLoading,
+                loadMore: storageData.loadMore
             })
             wx.hideLoading()
             return false
@@ -76,18 +75,19 @@ Page({
     },
     // 下拉刷新
     onPullDownRefresh: function () {
+        console.log('刷新')
         this.getData()
-        console.log(this.data.page);
         wx.stopPullDownRefresh()
     },
     // 上拉加载
     onReachBottom: function () {
-        let page = this.data.page + 1
+        let page = this.data.page
+        console.log(page)
         this.setData({
             page: page,
             loadMore: this.data.arr.length > 0 ? true : false
         })
-        this.getData()
+        if (this.data.reqAble == false) this.getData()
     },
     onUnload: function () {
         if (this.data.arr.length > 0) {
