@@ -1,8 +1,6 @@
 <!--更多-->
-<import src="../common/loading.wxml" />
 <view class='container'>
-    <template is="loading" data="{{showloading: showloading}}" />
-    <view class='page-body' hidden="{{!showloading}}">
+    <view class='page-body'>
 
         <!--获取用户微信头像  -->
         <view class='header'>
