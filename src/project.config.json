@@ -21,8 +21,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "汇报",
+					"pathName": "page/taskDetail/report",
+					"query": "taskId=TASK2017102700000010"
+				}
+			]
 		}
 	}
 }

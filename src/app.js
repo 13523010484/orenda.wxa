@@ -27,6 +27,7 @@ App({
             method: method || 'GET',
             dataType: 'json',
             success: function (ret) {
+                wx.hideLoading()
                 var body = ret.data;
                 if (body.code === 403) {
                     this.getWxLogin(function () {
@@ -50,6 +51,7 @@ App({
                 return typeof callback == "function" && callback(body)
             },
             fail: function (ret) {
+                wx.hideLoading()
                 wx.showModal({
                     title: '提示',
                     content: '网络连接错误',

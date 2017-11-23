@@ -4,11 +4,6 @@ const taskListEditHistoryUrl = app.api.taskListEditHistoryUrl
 
 Page({
     data: {
-        // 仅用来模拟流程，非真实要用 1:未完成，2:已完成 3:待审核
-        // status: 1,
-        // percent1: 60,
-        // percent2: 10,
-        // percent3: 20,
         showReport: true
     },
     //请求数据

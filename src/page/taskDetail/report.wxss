@@ -33,3 +33,19 @@ input, textarea {
 .section__title_first {
     margin-top: 0;
 }
+
+.btn-area {
+    margin-top: 50rpx;
+}
+
+.checkbox {
+    display: block;
+    padding: 0.5em 15px;
+    font-size: 13px;
+    padding-top: 20rpx;
+    color: #999;
+}
+
+.checkbox text {
+    vertical-align: middle;
+}
