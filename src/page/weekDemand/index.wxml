@@ -1,6 +1,8 @@
 <!--本周需求列表  -->
+<import src="../common/loading.wxml" />
 <view class='container'>
-    <view class='page-body'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page-body" hidden="{{!showloading}}">
         <view class='events-day'>
             <block wx:for="{{arr}}" wx:for-item="itemName">
                 <view class='header'>{{itemName.date}}</view>

@@ -4,15 +4,13 @@ const bugUrl = app.api.bugUrl
 
 Page({
     data: {
-        arr: []
+        arr: [],
+        showloading: false
     },
 
     /* 数据请求函数*/
     getData: function () {
         var $this = this
-        this.setData({
-            showloading: false
-        })
         app.request(bugUrl, {}, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
@@ -30,6 +28,7 @@ Page({
 
     /* 页面加载 */
     onLoad: function () {
+
     },
 
     /* 跳转至bug详情页面 */
@@ -42,7 +41,7 @@ Page({
 
     /* 生命周期函数--监听页面显示 */
     onShow: function () {
-        let storageData = wx.getStorageSync('bugListData')
+    let storageData = wx.getStorageSync('bugListData')
         if (storageData) {
             this.setData({
                 arr: storageData.arr,
@@ -50,7 +49,7 @@ Page({
             })
             return false
         }
-        if(this.data.arr.length == 0) this.getData()
+        this.getData()
     },
     /* 监听用户下拉动作 */
     onPullDownRefresh: function () {

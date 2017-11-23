@@ -1,7 +1,7 @@
 <!--bug列表  -->
 <import src="../common/loading.wxml" />
 <view class="container">
-     <template is="loading" data="{{showloading: showloading}}" /> 
+    <template is="loading" data="{{showloading: showloading}}" />
     <view class="page-body" hidden="{{!showloading}}">
 
         <!--bug列表  -->

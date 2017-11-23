@@ -63,6 +63,7 @@ Page({
             title: '退出中',
         })
         wx.clearStorageSync('loginInfo')
+        wx.clearStorageSync('storageData')
         setTimeout(function () {
             wx.hideLoading()
             wx.redirectTo({

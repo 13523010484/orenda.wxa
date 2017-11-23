@@ -4,24 +4,25 @@ const myTaskListUrl = app.api.myTaskListUrl
 Page({
     data: {
         open1: true,
-        open2: false
+        open2: false,
+        showloading: false
     },
     /* 数据请求 */
-    getList: function () {
+    getData: function () {
         var $this = this
         app.request(myTaskListUrl, { about: 1 }, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
                 var data = res.data
                 $this.setData({
-                    data: data
+                    data: data,
+                    showloading: true
                 })
             }
         })
     },
     /* 监听页面加载 */
-    onLoad: function (options) {
-        this.getList()
+    onLoad: function () {
         this.getUserInfo()
     },
     /* 获取微信公共信息 */
@@ -60,9 +61,29 @@ Page({
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
-        console.log(e.currentTarget.dataset.taskId)
         wx.navigateTo({
             url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId
         })
+    },
+    /* 下拉刷新 */
+    onPullDownRefresh: function() {
+        this.getData()
+        wx.stopPullDownRefresh()
+    },
+    /* onShow 页面显示 */
+    onShow: function() {
+        let storageData = wx.getStorageSync('myRespTaskData')
+        if (storageData){
+            this.setData({
+                data: storageData,
+                showloading: true
+            })
+            return false
+        }
+        this.getData()
+    },
+    /* 页面卸载时，缓存数据 */
+    onUnload: function() {
+        if (!(JSON.stringify(this.data.data) == '{}')) wx.setStorageSync('myRespTaskData', this.data.data)
     }
 })

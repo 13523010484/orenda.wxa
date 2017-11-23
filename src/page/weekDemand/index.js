@@ -8,6 +8,7 @@ Page({
         reqAble: true,
         loadMore: false,
         hasLoading: false,
+        showloading: false,
         arr: []
     },
     /* 数据请求 */
@@ -17,12 +18,12 @@ Page({
             /* 请求接口成功时 */
             if (res.code == 1) {
                 if (!(JSON.stringify(res.data) == '{}')) {
-                    console.log('res.data不为空')
                     $this.data.reqAble = false;
                     let page = $this.data.page + 1
                     $this.setData({
                         page: page,
-                        reqAble: $this.data.reqAble
+                        reqAble: $this.data.reqAble,
+                        showloading: true
                     })
                 }
                 for (var i in res.data) {
@@ -35,21 +36,16 @@ Page({
                 $this.setData({
                     arr: $this.data.arr,
                     loadMore: false,
-                    hasLoading: true
+                    hasLoading: true,
+                    showloading: true
                 })
             }
-            setTimeout(function () {
-                wx.hideLoading()
-            }, 500)
         })
     },
 
     /* 监听页面加载 */
     onLoad: function () {
-        // 显示加载提示
-        wx.showLoading({
-            title: '加载中...',
-        })
+
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
@@ -66,23 +62,21 @@ Page({
                 size: storageData.size,
                 arr: storageData.arr,
                 hasLoading: storageData.hasLoading,
-                loadMore: storageData.loadMore
+                loadMore: storageData.loadMore,
+                showloading: true
             })
-            wx.hideLoading()
             return false
         }
-        if (this.data.arr.length == 0) this.getData()
+        this.getData()
     },
     // 下拉刷新
     onPullDownRefresh: function () {
-        console.log('刷新')
         this.getData()
         wx.stopPullDownRefresh()
     },
     // 上拉加载
     onReachBottom: function () {
         let page = this.data.page
-        console.log(page)
         this.setData({
             page: page,
             loadMore: this.data.arr.length > 0 ? true : false

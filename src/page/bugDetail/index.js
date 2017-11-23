@@ -4,13 +4,11 @@ const bugDetailUrl = app.api.bugDetailUrl
 
 Page({
     data: {
+        showloading: false
     },
     //请求数据
     getData: function (bugId) {
         var $this = this;
-        this.setData({
-            showloading: false
-        })
         app.request(bugDetailUrl, { bug_id: bugId }, function (res) {
             if (res.code == 1) {
                 var data = res.data
@@ -28,9 +26,6 @@ Page({
     },
     // 下拉刷新
     onPullDownRefresh: function (options) {
-        // this.setData({
-        //     showloading: false
-        // })
         this.getData(this.options.bugid)
         wx.stopPullDownRefresh()
     },
