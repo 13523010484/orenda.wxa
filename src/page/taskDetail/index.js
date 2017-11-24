@@ -38,7 +38,7 @@ Page({
                     console.log('这是我的任务')
                 }
                 //条件2:任务当前工作进度是否是100%
-                if (data.work_progress < 100) {
+                if (data.work_report_progress < 100) {
                     //是未完成的任务
                     console.log('这个任务还没有完成，可以点击汇报')
                 }
@@ -48,7 +48,7 @@ Page({
                 $this.setData({
                     data: data,
                     // 以上讲解的判断逻辑，一句话就可以搞定，同时满足以下两个条件返回true，否则返回false ，如下。
-                    showReport: userinfo.userId == assign_person && data.work_progress < 100
+                    showReport: userinfo.userId == assign_person && data.work_report_progress < 100
                     // workReportProgress: data.work_report_progress 删掉！不要作无意义的变量赋值！ 
                 })
 
