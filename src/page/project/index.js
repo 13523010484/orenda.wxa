@@ -20,14 +20,26 @@ Page({
             }
         })
     },
-    onLoad: function (options) {
-        this.getData()
+    onShow:function(){
+        var project = wx.getStorageSync('project')
+        if (project){
+            this.setData({
+                root: project,
+                showloading: true
+            }) 
+        }else{
+            this.getData()  
+        }
     },
-
     // 点击列表跳转到详情
     jumpDetail: function (e) {
         wx.navigateTo({
-            url: 'lists?projectid=' + e.currentTarget.dataset.projectId
+            url: 'lists?projectid=' + e.currentTarget.dataset.projectId + '&projectname=' + e.currentTarget.dataset.projectName
         })
+    },
+    onHide: function () {
+        if (this.data.root.length > 0) {
+            wx.setStorageSync('project', this.data.root)
+        }
     }
 })

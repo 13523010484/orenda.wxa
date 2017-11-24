@@ -5,7 +5,7 @@
     <view class="page-body" hidden="{{!showloading}}">
         <!--项目列表  -->
         <view class='projects'>
-            <view class='project' bindtap='jumpDetail' data-project-id='{{item.projectId}}' wx:for="{{root}}" wx:key="{{item.id}}}">
+            <view class='project' bindtap='jumpDetail' data-project-id='{{item.projectId}}'data-project-name='{{item.text}}' wx:for="{{root}}" wx:key="{{item.id}}}">
                 <image src="/image/projects.png"></image>
                 <text class='project-name'>{{item.text}}</text>
             </view>

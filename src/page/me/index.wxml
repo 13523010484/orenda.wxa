@@ -19,19 +19,22 @@
                 </view>
                 <text class='icon'></text>
             </navigator>
-
-            <view bindtap='jumpDetail' class="lists_hd no_lists_hd" hover-class='none' url="task">
+            <navigator class="lists_hd no_lists_hd" hover-class='none' url="/page/weekDemand/index">
                 <view class='lists_hd__desc'>
                     <image src='/image/week-demand.png'></image> 本周需求
                 </view>
                 <text class='icon'></text>
-            </view>
-
-            <navigator class="lists_hd no_lists_hd" hover-class='none' class="lists_hd" url="/page/bug/index">
+            </navigator>
+            <navigator class="lists_hd no_lists_hd" hover-class='none' url="/page/bug/index">
                 <view class='lists_hd__desc'>
                     <image src='/image/me-bug.png'></image> Bug列表
                 </view>
-
+                <text class='icon'></text>
+            </navigator>
+            <navigator class="lists_hd" hover-class='none' url="/page/task/report">
+                <view class='lists_hd__desc'>
+                    <image src='/image/me-check.png'></image> 审核任务汇报
+                </view>
                 <text class='icon'></text>
             </navigator>
         </view>

@@ -63,6 +63,7 @@
 
 .todo_lists, .todo_cell {
     background-color: transparent;
+    border-bottom: none
 }
 
 .todo_cell:active {

@@ -9,7 +9,7 @@
             <!--点击审核 -->
              <view class='btn-ok' wx-if="{{data.audit_status == 1}}" bindtap='handleCheck'>
                 <text>点击</text>
-                <text>审核</text>
+                <text>通过</text>
             </view> 
             <!--审核通过  -->
              <view class='task-complate' wx-if="{{data.audit_status == 2}}">
@@ -42,7 +42,10 @@
                         <progress percent="{{data.time_progress}}" color="#f66239" stroke-width="5" show-info/>
                     </view>
                     <view class='content'>
-                        <text>汇报说明：</text>{{data.report_content}}
+                        <text>汇报内容：</text>
+                        <view class="todo_info" style='margin-top:14rpx'>
+                             {{data.report_content}}
+                        </view>
                     </view>
                 </view>
             </view>

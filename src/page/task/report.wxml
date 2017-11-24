@@ -1,0 +1,29 @@
+<!--page/task/report.wxml 任务待审核汇报-->
+<import src="../common/loading.wxml" />
+<view class='container'>
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class='page-body' hidden="{{!showloading}}">
+        <view class='todo_lists'>
+            <view class="todo_cell_warp " wx:for="{{task_list}}" wx:key="{{item.task_id}}">
+                <view class='todo_lists'>
+                    <view class="lists_hd ">
+                        <text class="icon_child"></text>
+                        <text class="barge">{{item.report_num}}</text>
+                        <text class='lists_hd__desc'>{{item.NAME}}</text>
+                    </view>
+                    <view class="todo_cell_warp ">
+                        <navigator class='todo_cell' bindtap='jumpDetail' wx:for="{{item.child}}" wx:key="{{itemName.task_id}}" wx:for-item="itemName" url='/page/myTaskAuditDetail/index?report_id={{itemName.task_work_progress_id}}'>
+                            <view class='item-name'>
+                                {{itemName.report_content||'暂无'}}
+                            </view>
+                            <view class='item-content'>
+                                <text>执行人：{{item.executor_name}}</text>
+                                <text>汇报时间：{{itemName.added_time}}</text>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -4,10 +4,10 @@
     <template is="loading" data="{{showloading: showloading}}" />
     <view class="page-body" hidden="{{!showloading}}">
         <view class='events-day'>
-            <block wx:for="{{arr}}" wx:for-item="itemName">
-                <view class='header'>{{itemName.date}}</view>
+            <block wx:for="{{arr}}" wx:for-item="itemName" wx:key="{{index}}">
+                <view class='header'>{{index}}</view>
                 <view class="panel_warp">
-                    <view class="panel__list" data-requirement-id="{{item.requirement_id}}" wx:for="{{itemName.content}}" wx:for-item="item" bindtap='jumpDetail'>
+                    <view class="panel__list" data-requirement-id="{{item.requirement_id}}" wx:for="{{itemName}}" wx:for-item="item" bindtap='jumpDetail' wx:key="{{item.requirement_id}}">
                         <view class="panel__list_bd">
                             <view class='title'>{{item.name}}</view>
                             <view class="desc">
@@ -23,7 +23,5 @@
                 </view>
             </block>
         </view>
-        <view class="empty" wx:if="{{hasLoading && arr.length == 0}}"> 暂无数据哦～ </view>
-        <view class="load_more" wx:if="{{arr.length > 0 && loadMore == true}}">加载更多..</view>
     </view>
 </view>

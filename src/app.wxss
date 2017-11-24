@@ -80,3 +80,12 @@ button[type="primary"] {
     color: rgba(255, 255, 255, 0.6);
     background-color: #41babe;
 }
+
+/*loading  */
+
+.page {
+    width: 100%;
+    text-align: center;
+    color: #888;
+    padding: 40rpx 0;
+}

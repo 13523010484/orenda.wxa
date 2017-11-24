@@ -1,6 +1,7 @@
 <!--page/manage/index.wxml 追踪-->
 <!--任务-->
 <import src="../common/loading.wxml" />
+<import src="../common/page.wxml" />
 <view class='container'>
     <template is="loading" data="{{showloading: showloading}}" />
     <view class='page-body' hidden="{{!showloading}}">
@@ -138,6 +139,6 @@
             </view>
 
         </block>
-
+        <template is="page" data="{{showloading: lodermode}}" />
     </view>
 </view>

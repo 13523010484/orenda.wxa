@@ -1,0 +1,31 @@
+/* page/task/report.wxss */
+@import "/page/project/lists.wxss";
+
+.todo_lists .lists_hd {
+    height: auto;
+    line-height: auto;
+    padding: 30rpx;
+}
+
+.todo_lists .lists_hd .lists_hd__desc {
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.barge {
+    display: inline-block;
+    padding: 0.15em 0.4em;
+    min-width: 16rpx;
+    border-radius: 18px;
+    background-color: #f66239;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 24rpx;
+    vertical-align: middle;
+    margin-right: 10rpx;
+}

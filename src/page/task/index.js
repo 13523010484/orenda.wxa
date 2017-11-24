@@ -1,7 +1,5 @@
 var app = getApp();
 const myTaskListUrl = app.api.myTaskListUrl
-const myTaskCanAuditUrl = app.api.myTaskCanAuditUrl
-
 Page({
     /**
      * 页面的初始数据

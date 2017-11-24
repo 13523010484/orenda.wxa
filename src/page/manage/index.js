@@ -5,20 +5,18 @@ const taskListsUrl = app.api.taskListsUrl
 Page({
     data: {
         tab_status: 0,
-        showloading: false
+        showloading: false,
+        lodermode: true,
+        size: 10,
+        page: 1
     },
     //"动态" 接口请求
     getData_loginstatus: function () {
         var $this = this
-        app.request(manageUrl, {}, function (res) {
-            /* 请求成功时 */
+        app.request(manageUrl, { size: 30 }, function (res) {
             if (res.code == 1) {
-                var data = res.data, arr = []
-                data.forEach(function (item) {
-                    arr.push(item)
-                })
                 $this.setData({
-                    arr: arr,
+                    arr: res.data,
                     showloading: true
                 })
             }
@@ -26,24 +24,23 @@ Page({
     },
     //"进行中" 接口请求
     getData_processing: function () {
-        var $this = this
-        app.request(taskListsUrl, {}, function (res) {
+        var self = this
+        app.request(taskListsUrl, { size: this.data.size, page: this.data.page }, function (res) {
             if (res.code == 1) {
-                var dataP = res.data, arrP = [];
-                dataP.forEach(function (item) {
-                    arrP.push(item)
-                })
-                $this.setData({
-                    dataP: dataP,
-                    arrP: arrP
+                if (self.data.arrP && self.data.arrP.length > 0) {
+                    res.data = self.data.arrP.concat(res.data);
+                }
+                self.setData({
+                    arrP: res.data,
+                    lodermode: true
                 })
             }
         })
     },
     //监听页面加载
     onLoad: function () {
-        this.getData_loginstatus()
         this.getData_processing()
+        this.getData_loginstatus()
     },
 
     // 切换类型
@@ -54,32 +51,22 @@ Page({
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
-        console.log(e.currentTarget.dataset.taskId)
+        // console.log(e.currentTarget.dataset.taskId) 删除不必要的调试信息！
         wx.navigateTo({
             url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId,
         })
     },
-    /* 监听页面显示 */
-    onShow: function () {
+    /**
+    * 页面上拉触底事件的处理函数
+    */
+    onReachBottom(e) {
+        let body = this.data.arrP
+        if (body && Number.isInteger(body.length / this.data.size)) {
+            this.setData({
+                page: this.data.page + 1,
+                lodermode: false
+            })
+            this.getData_processing();
+        }
     },
-    /* 监听页面隐藏 */
-    onHide: function () {
-
-    },
-    /* 监听页面卸载 */
-    onUnload: function () {
-
-    },
-    /* 监听页面下拉动作 */
-    onPullDownRefresh: function () {
-
-    },
-    /* 上拉触底事件 */
-    onReachBottom: function () {
-
-    },
-    /* 用户点击右上角分享 */
-    onShareAppMessage: function () {
-
-    }
 })

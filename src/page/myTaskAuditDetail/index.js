@@ -6,6 +6,11 @@ Page({
     data: {
         showloading: false
     },
+    /* 页面加载 */
+    onLoad: function (options) {
+        this.auditDetailData(options.report_id)
+
+    },
     // 可审任务详情 数据请求
     auditDetailData: function (taskWorkProgressId) {
         var $this = this
@@ -15,54 +20,27 @@ Page({
                 //更新数据
                 $this.setData({
                     data: data,
-                    audit_status: data.audit_status,
+                    // audit_status: data.audit_status, //不要做没意义的赋值，删掉！
                     showloading: true
                 })
             }
         })
     },
     // 可审任务点击通过 数据请求
-    auditPassData: function (taskWorkProgressId) {
+    handleCheck: function () {
         var $this = this
-        app.request(myTaskAuditPassUrl, { task_work_progress_id: taskWorkProgressId }, function (res) {
-            console.log(res);
+        app.request(myTaskAuditPassUrl, { task_work_progress_id: this.data.data.task_work_progress_id }, function (res) {
             if (!res.hasErrors) {
-                $this.data.data.audit_status=2;
-                $this.data.data.audit_status_name = '通过';
+                $this.data.data.audit_status = 2;
+                $this.data.data.audit_status_name = '已通过';
                 $this.setData({
                     data: $this.data.data
                 })
+                // 通过后刷新上一页数据
+                let pages = getCurrentPages()
+                let prePage = pages[pages.length - 2];
+                prePage.get_task_list()
             }
         }, 'POST')
-    },
-    /* 页面加载 */
-    onLoad: function (options) {
-        this.auditDetailData(options.taskworkprogressid)
-    },
-    /* 点击完成 */
-    handleCheck: function (options) {
-        this.auditPassData(this.options.taskworkprogressid)
-    },   
-    /* 监听页面显示 */
-    onShow: function () {
-
-    }, 
-    /* 监听页面隐藏 */
-    onHide: function () {
-
-    },
-    /* 监听页面卸载 */
-    onUnload: function () {
-
-    },
-    /* 监听用户下拉动作 */
-    onPullDownRefresh: function () {
-        console.log('下拉刷新')
-    },
-    /* 监听页面上拉触底事件 */
-    onReachBottom: function () {
-    },
-    /* 用户点击右上角分享 */
-    onShareAppMessage: function () {
     }
 })

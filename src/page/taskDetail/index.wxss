@@ -93,6 +93,7 @@
 
 rich-text {
     color: #666;
+    display: inline-block
 }
 
 .hide {

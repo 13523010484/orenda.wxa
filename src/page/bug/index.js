@@ -13,12 +13,13 @@ Page({
         app.request(bugUrl, {}, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
-                var data = res.data, arr = []
-                data.forEach(function (item) {
-                    arr.push(item)
-                })
+                // 删掉！！！
+                // var data = res.data, arr = []
+                // data.forEach(function (item) {
+                //     arr.push(item)
+                // })
                 $this.setData({
-                    arr: arr,
+                    arr: res.data,
                     showloading: true
                 })
             }
@@ -33,21 +34,7 @@ Page({
     },
 
     /* 生命周期函数--监听页面显示 */
-    onShow: function () {
-        let storageData = wx.getStorageSync('bugListData')
-        if (storageData) {
-            this.setData({
-                arr: storageData.arr,
-                showloading: true
-            })
-            return false
-        }
+    onLoad: function () {
         this.getData()
-    },
-    /* 生命周期函数--监听页面卸载 */
-    onUnload: function () {
-        if (this.data.arr.length > 0) {
-            wx.setStorageSync('bugListData', this.data)
-        }
     },
 })

@@ -41,24 +41,10 @@ Page({
             })
         }
     },
-
-    /**
-     * 
-     **/
-    jumpDetail: function () {
-        wx.navigateTo({
-            url: '/page/weekDemand/index',
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
-        })
-    },
-
     /**
      * 退出登录
      */
     signOut: function () {
-        //仅用于模拟退出登录流程
         wx.showLoading({
             title: '退出中',
         })
