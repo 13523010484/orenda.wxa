@@ -13,11 +13,6 @@ Page({
         app.request(bugUrl, {}, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
-                // 删掉！！！
-                // var data = res.data, arr = []
-                // data.forEach(function (item) {
-                //     arr.push(item)
-                // })
                 $this.setData({
                     arr: res.data,
                     showloading: true

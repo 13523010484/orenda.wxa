@@ -51,7 +51,6 @@ Page({
     },
     // 点击列表跳转到详情
     jumpDetail: function (e) {
-        // console.log(e.currentTarget.dataset.taskId) 删除不必要的调试信息！
         wx.navigateTo({
             url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId,
         })

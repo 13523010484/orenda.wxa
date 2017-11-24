@@ -25,7 +25,8 @@
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                <text>{{item.ask_begin_time}}</text>
+                                结束时间
+                                <text>{{item.ask_end_date}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
@@ -50,7 +51,8 @@
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                <text>{{item.ask_begin_time}}</text>
+                                结束时间
+                                <text>{{item.ask_end_date}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
@@ -65,7 +67,7 @@
         <block wx:if="{{tab_status==2}}">
             <view class='todo_lists' wx:if="{{my_launched_task.A && my_launched_task.A.length>0}}">
                 <view bindtap='change_status' class="lists_hd " id="open3">
-                    <text class='lists_hd__desc'>待审核</text>
+                    <text class='lists_hd__desc'>待完成</text>
                     <text class="icon {{open3?'icon_active':''}}"></text>
                 </view>
                 <view class="todo_cell_warp " hidden='{{!open3}}'>
@@ -73,12 +75,13 @@
                         <view class='item-name'>{{item.NAME}}</view>
                         <view class='item-content'>
                             <view class="item-cells">
-                                <image src='{{userInfo.avatarUrl}}'></image>
+                                <image src='/image/task_user.png'></image>
                                 <text>{{item.executor_name}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                <text>{{item.ask_begin_time}}</text>
+                                结束时间
+                                <text>{{item.ask_end_date}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>

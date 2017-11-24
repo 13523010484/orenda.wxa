@@ -20,7 +20,6 @@ Page({
                 //更新数据
                 $this.setData({
                     data: data,
-                    // audit_status: data.audit_status, //不要做没意义的赋值，删掉！
                     showloading: true
                 })
             }

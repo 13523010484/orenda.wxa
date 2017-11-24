@@ -14,6 +14,7 @@
                         </view>
                         <view class="item-cells">
                             <image src='/image/task_time.png'></image>
+                            结束时间
                             <text> {{item.ask_end_date}}</text>
                         </view>
                         <view class="item-cells">
