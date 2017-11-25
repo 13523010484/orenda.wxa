@@ -55,6 +55,7 @@ Page({
                 url: '/page/login/index'
             })
         }, 500)
+        app.globalData.userInfo = false
     }
 
 })

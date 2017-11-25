@@ -1,5 +1,6 @@
 <!--项目下的任务列表-->
 <import src="../common/loading.wxml" />
+<import src="../common/page.wxml" />
 <view class='container'>
     <template is="loading" data="{{showloading: showloading}}" />
     <view class='page-body' hidden="{{!showloading}}">
@@ -24,73 +25,6 @@
                 </view>
             </view>
         </view>
-        <!--另一个静态页面结构模板  -->
-        <!-- <view class='todo_lists'>
-
-            <view class="todo_cell_warp ">
-                <view class='todo_cell' bindtap='jumpDetail'>
-                    <view class='item-name'>
-                        物业系统的软件著作权、商标权申请登记
-                    </view>
-                    <view class='item-content'>
-                        <text>贾秋花</text>
-                        <text>2015-08-23</text>
-                        <text>物业电子巡更系统</text>
-                    </view>
-                </view>
-                <view class='todo_lists'>
-                    <view class="lists_hd ">
-                        <text class="icon_child"></text>
-                        <text class='lists_hd__desc'>安卓端任务</text>
-                    </view>
-                    <view class="todo_cell_warp ">
-
-                        <view class='todo_cell' bindtap='jumpDetail'>
-                            <view class='item-name'>
-                                物业系统的软件著作权、商标权申请登记
-                            </view>
-                            <view class='item-content'>
-                                <text>贾秋花</text>
-                                <text>2015-08-23</text>
-                                <text>物业电子巡更系统</text>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="todo_cell_warp ">
-                <view class='todo_cell' bindtap='jumpDetail'>
-                    <view class='item-name'>
-                        物业系统的软件著作权、商标权申请登记
-                    </view>
-                    <view class='item-content'>
-                        <text>贾秋花</text>
-                        <text>2015-08-23</text>
-                        <text>物业电子巡更系统</text>
-                    </view>
-                </view>
-                <view class='todo_lists'>
-                    <view class="lists_hd ">
-                        <text class="icon_child"></text>
-                        <text class='lists_hd__desc'>安卓端任务</text>
-                    </view>
-                    <view class="todo_cell_warp ">
-
-                        <view class='todo_cell' bindtap='jumpDetail'>
-                            <view class='item-name'>
-                                物业系统的软件著作权、商标权申请登记
-                            </view>
-                            <view class='item-content'>
-                                <text>贾秋花</text>
-                                <text>2015-08-23</text>
-                                <text>物业电子巡更系统</text>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view> -->
-        <!-- 跳转创建任务页 -->
-        <!-- <navigator url='' class="float-btn" hover-class='float-btn-active' bindtap='alert'>新建任务</navigator> -->
+        <template is="page" data="{{showloading: lodermode}}" />
     </view>
 </view>

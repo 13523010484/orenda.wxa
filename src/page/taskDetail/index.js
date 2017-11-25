@@ -15,10 +15,7 @@ Page({
     //获取任务详情
     getData: function (taskId) {
         var $this = this
-        var userinfo = app.globalData.userInfo
-
-        console.log(app.globalData.userInfo)
-
+        var userinfo = app.globalData.userInfo || wx.getStorageSync('userInfo')
         app.request(taskListsDetailUrl, { task_id: taskId }, function (res) {
             if (res.code == 1) {
                 var data = res.data

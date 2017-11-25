@@ -3,7 +3,11 @@ const taskListsUrl = app.api.taskListsUrl
 
 Page({
     data: {
-        showloading: false
+        showloading: false,
+        lodermode: true,
+        canLoadMore: true,
+        size: 10,
+        page: 1
     },
     /* 监听页面加载 */
     onLoad: function (options) {
@@ -17,17 +21,25 @@ Page({
     getData: function (projectId) {
         var $this = this
         // 每页请求20条
-        app.request(taskListsUrl, { project_id: projectId, size: 20 }, function (res) {
+        app.request(taskListsUrl, { project_id: projectId, size: $this.data.size, page: $this.data.page }, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
                 var data = res.data, arr = []
                 data.forEach(function (item) {
                     arr.push(item)
                 })
+                if ($this.data.arr && $this.data.arr.length > 0) {
+                    var reqDataAble = res.data
+                    if (reqDataAble.length == 0) {
+                        $this.data.canLoadMore = false
+                    }
+                    res.data = $this.data.arr.concat(reqDataAble);
+                }
                 //更新数据
                 $this.setData({
-                    arr: arr,
-                    showloading: true
+                    arr: res.data,
+                    showloading: true,
+                    lodermode: true
                 })
             }
         })
@@ -37,6 +49,19 @@ Page({
         wx.navigateTo({
             url: '/page/taskDetail/index?taskid=' + e.currentTarget.dataset.taskId
         })
+    },
+    /**
+   * 页面上拉触底事件的处理函数
+   */
+    onReachBottom(e) {
+        let body = this.data.arr
+        if (body && Number.isInteger(body.length / this.data.size) && this.data.canLoadMore == true) {
+            this.setData({
+                page: this.data.page + 1,
+                lodermode: false
+            })
+            this.getData(this.options.projectid);
+        }
     },
     // 仅用于演示
     alert() {
