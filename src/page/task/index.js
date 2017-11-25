@@ -77,7 +77,7 @@ Page({
         this.setData({
             showloading: false
         })
-        app.request(myTaskListUrl, { about: this.data.tab_status }, function (res) {
+        app.request(myTaskListUrl, { about: this.data.tab_status, size: 15 }, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
                 // 我负责的任务

@@ -6,22 +6,6 @@
 <view class="container">
     <template is="loading" data="{{showloading: showloading}}" />
     <view class="page-body" hidden="{{!showloading}}">
-        <!-- 暂时先取出点击完成操作 -->
-        <!-- <view class='simple-checkbox'>
-            <view class="project-name">项目：{{data.project_name}}</view>
-            <view class='task-complate' wx-if="{{status==2}}">
-                <icon type="success" size="80" color="rgba(83, 176, 56, 0.87)" />
-            </view>
-            <view class='btn-ok' wx-if="{{status==1}}" bindtap='handle_complate'>
-                <text>点击</text>
-                <text>完成</text>
-            </view>
-            <view class='btn-ok' wx-if="{{status==3}}" bindtap='handle_check'>
-                <text>通过</text>
-                <text>审核</text>
-            </view>
-            <view class="task-name">{{data.name}}</view>
-        </view> -->
         <view class='todo_lists'>
             <view class="todo_cell_warp ">
                 <view class='todo_cell'>
