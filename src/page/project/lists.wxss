@@ -2,7 +2,7 @@
 @import "/page/task/index.wxss";
 
 .page-body {
-    margin-bottom: 150rpx;
+    /* margin-bottom: 150rpx; */
 }
 
 .todo_lists {

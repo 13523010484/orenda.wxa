@@ -10,7 +10,7 @@ Page({
     /* 数据请求 */
     getData: function () {
         var $this = this
-        app.request(myTaskListUrl, { about: 1 }, function (res) {
+        app.request(myTaskListUrl, { about: 1, size: 30 }, function (res) {
             /* 请求接口成功时 */
             if (res.code == 1) {
                 var data = res.data

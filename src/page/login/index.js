@@ -56,6 +56,5 @@ Page({
     /* 页面登录*/
     go_login: function () {
         this.getLogin()
-        console.log(this)
     }
 })

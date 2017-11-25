@@ -60,7 +60,7 @@ Page({
     */
     onReachBottom(e) {
         let body = this.data.arrP
-        if (body && Number.isInteger(body.length / this.data.size)) {
+        if (body && this.data.tab_status == 0 && Number.isInteger(body.length / this.data.size)) {
             this.setData({
                 page: this.data.page + 1,
                 lodermode: false

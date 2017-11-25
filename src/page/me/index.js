@@ -14,7 +14,7 @@ Page({
         //点击初次进入页面时加载数据
         this.getUserInfo();
         this.setData({
-            userInfo: app.globalData.userInfo
+            userInfo: app.globalData.userInfo || wx.getStorageSync('userInfo')
         })
     },
     /**
@@ -33,7 +33,7 @@ Page({
             wx.getUserInfo({
                 success(res) {
                     app.globalData.haswxLogin = res.userInfo
-                    res.userInfo.userName = app.globalData.userInfo.userName
+                    res.userInfo.userName = that.data.userInfo.userName
                     that.setData({
                         userInfo: res.userInfo
                     })
