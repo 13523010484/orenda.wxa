@@ -12,7 +12,8 @@ Page({
         app.request(bugDetailUrl, { bug_id: bugId }, function (res) {
             if (res.code == 1) {
                 var data = res.data
-                data.dsc_rich_text_name = data.dsc_rich_text_name.replace(/<img src=/g, '<img width="100%" src=');
+                data.dsc_rich_text_name = $this.init_content(data.dsc_rich_text_name)
+                data.init_rich_text_name = $this.init_content(data.init_rich_text_name)
                 $this.setData({
                     data: data,
                     showloading: true
@@ -22,6 +23,12 @@ Page({
     },
     /* 监听页面显示 */
     onLoad: function (options) {
-        this.getData(this.options.bugid)
+        this.getData(options.bugid)
+    },
+    /* 正则去除img属性 */
+    init_content: function (str) {
+        return str ? str.replace(/<img([^>]+?)src=['"](https|http):\/\/(.+?)(\/.+?)['"]([^>]*?)>/g, function (match, tag1, protocol, host, url, tag2) {
+            return '<img' + tag1 + 'src="' + protocol + '://' + host + url + '"' + ' width="100%" style="display:inline-block"' + '>'
+        }) : str
     }
 })

@@ -57,8 +57,8 @@ Page({
         let body = this.data.arr
         if (body && Number.isInteger(body.length / this.data.size) && this.data.canLoadMore == true) {
             this.setData({
-                page: this.data.page + 1,
-                lodermode: false
+                lodermode: false,
+                page: this.data.page + 1
             })
             this.getData(this.options.projectid);
         }

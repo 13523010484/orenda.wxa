@@ -67,7 +67,7 @@
         <block wx:if="{{tab_status==2}}">
             <view class='todo_lists' wx:if="{{my_launched_task.A && my_launched_task.A.length>0}}">
                 <view bindtap='change_status' class="lists_hd " id="open3">
-                    <text class='lists_hd__desc'>待完成</text>
+                    <text class='lists_hd__desc'>进行中</text>
                     <text class="icon {{open3?'icon_active':''}}"></text>
                 </view>
                 <view class="todo_cell_warp " hidden='{{!open3}}'>

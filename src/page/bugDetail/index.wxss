@@ -3,6 +3,8 @@
 
 .page-body {
     margin-top: 4rpx;
+    background-color: #fff;
+    margin-bottom: 0
 }
 
 .header {
@@ -28,9 +30,10 @@
 }
 
 .content {
-    padding: 0 30rpx;
+    margin: 0 30rpx;
     background-color: #fff;
     padding-bottom: 48rpx;
+    position: relative
 }
 
 .content-title {

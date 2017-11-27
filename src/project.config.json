@@ -34,6 +34,12 @@
 					"name": "审核页面",
 					"pathName": "page/myTaskAuditDetail/index",
 					"query": "report_id=20171124000000000010"
+				},
+				{
+					"id": -1,
+					"name": "需求详情",
+					"pathName": "page/weekDemandDetail/index",
+					"query": "requirementid=REQ00000000000004224"
 				}
 			]
 		}

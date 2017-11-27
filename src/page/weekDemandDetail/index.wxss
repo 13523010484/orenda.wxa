@@ -42,3 +42,6 @@
 .null-1::after {
     content: '需求描述未填写';
 }
+.img-responsive{
+    margin: 0 auto
+}
