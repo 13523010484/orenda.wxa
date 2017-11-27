@@ -13,7 +13,7 @@ Page({
      * 生命周期函数--监听页面加载
     */
     onLoad: function (options) {
-        //var that = this
+        var that = this
         //微信登录获取code
         // app.getWxLogin(function (code) {
         //     that.setData({
@@ -33,7 +33,7 @@ Page({
     },
     /* 用户输入用户名密码登录逻辑*/
     getLogin: function () {
-        var $this = this, paras = {
+        var paras = {
             loginName: this.data.login_name,
             loginPassword: this.data.login_password,
             //code: this.data.code

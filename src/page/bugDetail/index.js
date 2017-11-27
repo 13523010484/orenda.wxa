@@ -21,19 +21,7 @@ Page({
         })
     },
     /* 监听页面显示 */
-    onShow: function (options) {
-        let storageData = wx.getStorageSync('bugDetailData')
-        if (storageData) {
-            this.setData({
-                data: storageData,
-                showloading: true
-            })
-            return false
-        }
+    onLoad: function (options) {
         this.getData(this.options.bugid)
-    },
-    // 页面卸载时，存储数据
-    onUnload: function () {
-        if (!(JSON.stringify(this.data.data) == '{}')) wx.setStorageSync('bugDetailData', this.data.data)
     }
 })
