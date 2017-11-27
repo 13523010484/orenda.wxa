@@ -25,9 +25,10 @@
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                结束时间
-                                <text>{{item.ask_end_date}}</text>
+                                <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
                             </view>
+                        </view>
+                        <view class='item-content' style='margin-top:0'>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
                                 <text>{{item.project_name}}</text>
@@ -51,9 +52,10 @@
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                结束时间
-                                <text>{{item.ask_end_date}}</text>
+                                <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
                             </view>
+                        </view>
+                        <view class='item-content' style='margin-top:0'>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
                                 <text>{{item.project_name}}</text>
@@ -75,14 +77,15 @@
                         <view class='item-name'>{{item.NAME}}</view>
                         <view class='item-content'>
                             <view class="item-cells">
-                                <image src='/image/task_user.png'></image>
+                                <image src='{{userInfo.avatarUrl}}'></image>
                                 <text>{{item.executor_name}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                结束时间
-                                <text>{{item.ask_end_date}}</text>
+                                <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
                             </view>
+                        </view>
+                        <view class='item-content' style='margin-top:0'>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
                                 <text>{{item.project_name}}</text>
@@ -100,15 +103,17 @@
                 <view class="todo_cell_warp" hidden='{{!open4}}'>
                     <view class='todo_cell' bindtap='jumpDetail' id="{{item.task_id}}" wx:for="{{my_launched_task.F}}" wx:key="{{item.task_id}}">
                         <view class='item-name'>{{item.NAME}}</view>
-                        <view class='item-content'>
+                       <view class='item-content'>
                             <view class="item-cells">
                                 <image src='{{userInfo.avatarUrl}}'></image>
                                 <text>{{item.executor_name}}</text>
                             </view>
                             <view class="item-cells">
                                 <image src='/image/task_time.png'></image>
-                                <text>{{item.ask_begin_time}}</text>
+                                <text>{{item.ask_begin_time}} ~ {{item.ask_end_date}}</text>
                             </view>
+                        </view>
+                        <view class='item-content' style='margin-top:0'>
                             <view class="item-cells">
                                 <image src='/image/task_project.png'></image>
                                 <text>{{item.project_name}}</text>

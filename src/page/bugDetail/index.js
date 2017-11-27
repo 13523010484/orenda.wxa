@@ -27,8 +27,15 @@ Page({
     },
     /* 正则去除img属性 */
     init_content: function (str) {
+
         return str ? str.replace(/<img([^>]+?)src=['"](https|http):\/\/(.+?)(\/.+?)['"]([^>]*?)>/g, function (match, tag1, protocol, host, url, tag2) {
-            return '<img' + tag1 + 'src="' + protocol + '://' + host + url + '"' + ' width="100%" style="display:inline-block"' + '>'
+            var newImg = '<img' + tag1 + 'src="' + protocol + '://' + host + url + '"' + ' width="100%"' + '>'
+            //
+            if (url == '/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif') {
+                newImg = '<img' + tag1 + 'src="' + protocol + '://' + host + url + '"' + ' style="display:inline-block"' + '>'
+            }
+            return newImg
         }) : str
+
     }
 })
