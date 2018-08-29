@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 
-var host = "https://info.orenda.com.cn"
+
 
 var config = {
 
